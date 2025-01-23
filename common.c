@@ -71,6 +71,7 @@ void *memcpy(void *dst, const void *src, size_t n) {
 }
 
 
+// ld.lld: error: duplicate symbol: memset
 void *memset(void *buf, char c, size_t n) {
     uint8_t *p = (uint8_t *) buf;
     while (n--)

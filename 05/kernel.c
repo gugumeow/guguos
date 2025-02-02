@@ -1,5 +1,6 @@
 // 05
 #include "kernel.h"
+#include "common.h"
 
 // 04
 typedef unsigned char uint8_t;
@@ -54,6 +55,12 @@ void kernel_main(void) {
         putchar(s[i]);
     }
 
+    // 05
+    printf("\nHello %s\n", "World!!");
+    printf("1 + 2 = %d, %x\n", 1 + 2, 0x1234abcd);
+
+
+    // 04
     for (;;) {
         // 05
         __asm__ __volatile__("wfi");

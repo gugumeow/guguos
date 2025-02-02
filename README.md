@@ -4,22 +4,39 @@
 # [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/)
 
 00.Intro
+
 01.Getting Started
+
 02.RISC-V 101
+
 03.Overview
+
 04.Boot
+
 05.Hello World!
+
 06.C Standard Library
+
 07.Kernel Panic
+
 08.Exception
+
 09.Memory Allocation
+
 10.Process
+
 11.Page Table
+
 12.Application
+
 13.User Mode
+
 14.System Call
+
 15.Disk I/O
+
 16.File System
+
 17.Outro
 
 # Download [OpenSBI](https://github.com/riscv-software-src/opensbi)

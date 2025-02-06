@@ -1,24 +1,23 @@
+// 05
 #pragma once
 
+// 08
 #include "common.h"
 
-#define PROCS_MAX 8       // 最大进程数量
-#define PROC_UNUSED   0   // 未使用的进程控制结构
-#define PROC_RUNNABLE 1   // 可运行的进程
-
-struct process {
-    int pid;             // 进程 ID
-    int state;           // 进程状态: PROC_UNUSED 或 PROC_RUNNABLE
-    vaddr_t sp;          // 栈指针
-    uint8_t stack[8192]; // 内核栈
-};
-
+// 05
 struct sbiret {
     long error;
     long value;
 };
 
+// 07
+#define PANIC(fmt, ...)                                                        \
+    do {                                                                       \
+        printf("PANIC: %s:%d: " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__);  \
+        while (1) {}                                                           \
+    } while (0)
 
+// 08
 struct trap_frame {
     uint32_t ra;
     uint32_t gp;
@@ -53,6 +52,7 @@ struct trap_frame {
     uint32_t sp;
 } __attribute__((packed));
 
+// 08
 #define READ_CSR(reg)                                                          \
     ({                                                                         \
         unsigned long __tmp;                                                   \
@@ -60,6 +60,7 @@ struct trap_frame {
         __tmp;                                                                 \
     })
 
+// 08
 #define WRITE_CSR(reg, value)                                                  \
     do {                                                                       \
         uint32_t __tmp = (value);                                              \

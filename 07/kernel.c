@@ -61,6 +61,9 @@ void kernel_main(void) {
     printf("\nHello %s\n", "World!!");
     printf("1 + 2 = %d, %x\n", 1 + 2, 0x1234abcd);
 
+    // 07
+    PANIC("booted!");  // 确认显示了正确的文件名和行号:PANIC: kernel.c:65: booted!
+    printf("unreachable here!\n");  // 并且 PANIC 之后的处理没有执行（即，没有显示 "unreachable here!"）
 
     // 04
     for (;;) {

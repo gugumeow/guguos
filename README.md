@@ -8,7 +8,7 @@ provided that the original copyright notice is included.
 
 Original Copyright:
 © [OS in 1,000 Lines](https://github.com/nuta/operating-system-in-1000-lines/blob/main/LICENCE.md)  
-Licensed under the **MIT License** – see the [MIT License](LICENSE) file for details.
+Licensed under the **MIT License** – see the [MIT License](https://opensource.org/license/MIT) file for details.
 
 Modifications in This Project:
 Additional modifications and contributions in this repository are also released under the **MIT License**.

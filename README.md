@@ -7,6 +7,7 @@ According to the MIT License, you are free to use, modify, and distribute the co
 provided that the original copyright notice is included.
 
 Original Copyright:
+
 © [OS in 1,000 Lines](https://github.com/nuta/operating-system-in-1000-lines/blob/main/LICENCE.md)  
 Licensed under the **MIT License** – see the [MIT License](https://opensource.org/license/MIT) file for details.
 

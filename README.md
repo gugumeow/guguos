@@ -10,7 +10,8 @@ According to the MIT License, you are free to use, modify, and distribute the co
 © [OS in 1,000 Lines](https://github.com/nuta/operating-system-in-1000-lines/blob/main/LICENCE.md)  
 Licensed under the **MIT License** – see the [MIT License](https://opensource.org/license/MIT) file for details.
 
-Modifications in This Project:
+*Modifications in This Project:*
+
 Additional modifications and contributions in this repository are also released under the **MIT License**.
 
 ---

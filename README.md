@@ -6,11 +6,11 @@ which is licensed under the **MIT License**.
 According to the MIT License, you are free to use, modify, and distribute the content,  
 provided that the original copyright notice is included.
 
-### Original Copyright:
+Original Copyright:
 © [OS in 1,000 Lines]([https://example.com](https://operating-system-in-1000-lines.vercel.app/))  
 Licensed under the **MIT License** – see the [MIT License](LICENSE) file for details.
 
-### Modifications in This Project:
+Modifications in This Project:
 Additional modifications and contributions in this repository are also released under the **MIT License**.
 
 ---

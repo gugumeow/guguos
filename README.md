@@ -7,7 +7,7 @@ According to the MIT License, you are free to use, modify, and distribute the co
 provided that the original copyright notice is included.
 
 Original Copyright:
-© [OS in 1,000 Lines]([https://example.com](https://operating-system-in-1000-lines.vercel.app/))  
+© [OS in 1,000 Lines](https://github.com/nuta/operating-system-in-1000-lines/blob/main/LICENCE.md)  
 Licensed under the **MIT License** – see the [MIT License](LICENSE) file for details.
 
 Modifications in This Project:

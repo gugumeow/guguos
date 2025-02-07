@@ -1,7 +1,7 @@
 ## License & Copyright
 
-#### *This repository includes content from [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/)* 
-which is licensed under the **MIT License**. ####
+*This repository includes content from [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/)* 
+which is licensed under the **MIT License**.
 
 According to the MIT License, you are free to use, modify, and distribute the content,  
 provided that the original copyright notice is included.

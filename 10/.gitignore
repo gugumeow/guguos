@@ -1,0 +1,8 @@
+/disk/*
+!/disk/.gitkeep
+*.map
+*.tar
+*.o
+*.elf
+*.log
+*.pcap

@@ -17,6 +17,10 @@ extern char __bss[], __bss_end[], __stack_top[];
 // 09
 extern char __free_ram[], __free_ram_end[];
 
+// 10
+struct process *current_proc; // 当前运行的进程
+struct process *idle_proc;    // 空闲进程
+
 // 09
 paddr_t alloc_pages(uint32_t n) {
     static paddr_t next_paddr = (paddr_t) __free_ram;
@@ -70,7 +74,11 @@ __attribute__((naked))
 __attribute__((aligned(4)))
 void kernel_entry(void) {
     __asm__ __volatile__(
+        // 10
+        // 从sscratch中获取运行进程的内核栈
         "csrw sscratch, sp\n"
+
+        // 08
         "addi sp, sp, -4 * 31\n"
         "sw ra,  4 * 0(sp)\n"
         "sw gp,  4 * 1(sp)\n"
@@ -103,8 +111,15 @@ void kernel_entry(void) {
         "sw s10, 4 * 28(sp)\n"
         "sw s11, 4 * 29(sp)\n"
 
+        // 10
+        // 获取并保存异常发生时的sp
         "csrr a0, sscratch\n"
         "sw a0, 4 * 30(sp)\n"
+
+        // 10
+        // 重置内核栈
+        "addi a0, sp, 4 * 31\n"
+        "csrw sscratch, a0\n"
 
         "mv a0, sp\n"
         "call handle_trap\n"
@@ -205,6 +220,7 @@ void handle_trap(struct trap_frame *f) {
     PANIC("unexpected trap scause=%x, stval=%x, sepc=%x\n", scause, stval, user_pc);
 }
 
+
 // 10
 void delay(void) {
     for (int i = 0; i < 30000000; i++)
@@ -215,25 +231,7 @@ void delay(void) {
 struct process *proc_a;
 struct process *proc_b;
 
-// 10
-void proc_a_entry(void) {
-    printf("starting process A\n");
-    while (1) {
-        putchar('A');
-        switch_context(&proc_a->sp, &proc_b->sp);
-        delay();
-    }
-}
 
-// 10
-void proc_b_entry(void) {
-    printf("starting process B\n");
-    while (1) {
-        putchar('B');
-        switch_context(&proc_b->sp, &proc_a->sp);
-        delay();
-    }
-}
 
 // 10
 struct process procs[PROCS_MAX]; // 所有进程控制结构
@@ -277,6 +275,60 @@ struct process *create_process(uint32_t pc) {
     return proc;
 }
 
+
+// 10
+void yield(void) {
+    // 搜索可运行的进程
+    struct process *next = idle_proc;
+    for (int i = 0; i < PROCS_MAX; i++) {
+        struct process *proc = &procs[(current_proc->pid + i) % PROCS_MAX];
+        if (proc->state == PROC_RUNNABLE && proc->pid > 0) {
+            next = proc;
+            break;
+        }
+    }
+
+    // 如果除了当前进程外没有可运行的进程，返回并继续处理
+    if (next == current_proc)
+        return;
+
+    // 10
+    __asm__ __volatile__(
+        "csrw sscratch, %[sscratch]\n"
+        :
+        : [sscratch] "r" ((uint32_t) &next->stack[sizeof(next->stack)])
+    );
+
+    // 上下文切换
+    struct process *prev = current_proc;
+    current_proc = next;
+    switch_context(&prev->sp, &next->sp);
+}
+
+// 10
+void proc_a_entry(void) {
+    printf("starting process A\n");
+    while (1) {
+        putchar('A');
+        //switch_context(&proc_a->sp, &proc_b->sp);
+        //delay();
+        // 10
+        yield();
+    }
+}
+
+// 10
+void proc_b_entry(void) {
+    printf("starting process B\n");
+    while (1) {
+        putchar('B');
+        //switch_context(&proc_b->sp, &proc_a->sp);
+        //delay();
+        // 10
+        yield();
+    }
+}
+
 // 04
 void kernel_main(void) {
 
@@ -300,9 +352,18 @@ void kernel_main(void) {
     printf("alloc_pages test: paddr1=%x\n", paddr1);
 
     // 10
+    idle_proc = create_process((uint32_t) NULL);
+    idle_proc->pid = -1; // idle
+    current_proc = idle_proc;
+
+    // 10
     proc_a = create_process((uint32_t) proc_a_entry);
     proc_b = create_process((uint32_t) proc_b_entry);
     proc_a_entry();
+
+    // 10
+    yield();
+    PANIC("switched to idle process");
 
     // 08
     WRITE_CSR(stvec, (uint32_t) kernel_entry); // 新增

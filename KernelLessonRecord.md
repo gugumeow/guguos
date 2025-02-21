@@ -1,3 +1,9 @@
+## 課程內容
+[影片](https://www.youtube.com/live/HiT19cs_Ys0?si=t9JkiY9_6aYeyMe6)
+
+[教材](https://www.youtube.com/live/HiT19cs_Ys0?si=t9JkiY9_6aYeyMe6)
+
+
 ## W01: 20250218
 
 目的是**翻身**

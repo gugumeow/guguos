@@ -51,7 +51,7 @@ Power 2
 
 #### 02:00:00
 
-## W01 HW
+**W01 HW**
 
 lab0: [CMU junior starts](https://www.andrew.cmu.edu/course/18-613/labs/QuickStart-lab0.pdf)
 

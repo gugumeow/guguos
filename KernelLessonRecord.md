@@ -33,4 +33,14 @@ EWMA
 
 #### 01:10:00 
 
+浮點數(FP) > Rounding Error > Fixed-Point Number
+
+IEEE 754(1985)
+
+Linux 避免使用浮點數暫存器
+
+Mado(日文視窗)
+
+#### 01:30:00
+
 

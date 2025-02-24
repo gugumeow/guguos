@@ -18,7 +18,7 @@
 #### 03:04:00
 學習Linux所需**背景知識**
 
-## W01: 20250225
+## W01: 20250220
 
 #### 00:16:30
 每週上課隨堂測驗：快速看懂C語言程式碼
@@ -47,13 +47,17 @@ Linked List: &(*p)
 
 記憶體管理：這學期重視
 
+Power 2
+
 #### 02:00:00
+
+## W01 HW
 
 lab0: [CMU junior starts](https://www.andrew.cmu.edu/course/18-613/labs/QuickStart-lab0.pdf)
 
-W01HW：ideas是學習到期末該會的底線
+ideas: 是學習到期末該會的底線
 
-拜占庭將軍問題、Sparse
+拜占庭將軍問題、[Sparse](https://en.m.wikipedia.org/wiki/Sparse)
 
 #### 03:10:00
 

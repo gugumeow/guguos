@@ -27,7 +27,7 @@
 
 [CPU land](https://cpu.land/)
 
-EWMA
+[EWMA](https://zh.m.wikipedia.org/wiki/%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87)
 
 用字遣詞要正確：天演論-嚴復
 

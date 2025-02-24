@@ -49,3 +49,11 @@ Linked List: &(*p)
 
 #### 02:00:00
 
+lab0: CMU junior starts
+
+W01作業：ideas是學習到期末該會的底線
+
+拜占庭將軍問題、sparse
+
+#### 03:00:00
+

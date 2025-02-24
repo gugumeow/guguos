@@ -57,7 +57,7 @@ lab0: [CMU junior starts](https://www.andrew.cmu.edu/course/18-613/labs/QuickSta
 
 ideas: 是學習到期末該會的底線
 
-[拜占庭將軍問題](https://zh.m.wikipedia.org/zh-tw/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B0%86%E5%86%9B%E9%97%AE%E9%A2%98)、[Sparse](https://en.m.wikipedia.org/wiki/Sparse)
+[拜占庭將軍問題](https://zh.m.wikipedia.org/zh-tw/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B0%86%E5%86%9B%E9%97%AE%E9%A2%98)、[Sparse](https://en.m.wikipedia.org/wiki/Sparse)、sanitizer(適量使用)
 
 #### 03:10:00
 

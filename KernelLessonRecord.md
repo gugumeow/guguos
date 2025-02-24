@@ -6,7 +6,7 @@
 
 ## W00: 20250218
 
-目的是**翻身**
+目的是**「翻身」**
 #### 00:45:00
 教學是因為有學生需要
 #### 01:15:00
@@ -39,7 +39,7 @@ IEEE 754(1985)
 
 Linux 避免使用浮點數暫存器
 
-Mado(日文視窗)
+Mado(日文的「視窗」)
 
 #### 01:30:00
 
@@ -49,11 +49,11 @@ Linked List: &(*p)
 
 #### 02:00:00
 
-lab0: CMU junior starts
+lab0: [CMU junior starts](https://www.andrew.cmu.edu/course/18-613/labs/QuickStart-lab0.pdf)
 
-W01作業：ideas是學習到期末該會的底線
+W01HW：ideas是學習到期末該會的底線
 
-拜占庭將軍問題、sparse
+拜占庭將軍問題、Sparse
 
 #### 03:10:00
 

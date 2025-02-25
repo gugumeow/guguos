@@ -61,3 +61,10 @@ ideas: 是學習到期末該會的底線
 
 #### 03:10:00
 
+Good GitHub commit message
+
+CONTRIBUTING.md：務必詳閱
+
+#### 03:31:00 
+
+

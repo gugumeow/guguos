@@ -92,7 +92,7 @@ W01 HW
 
 #### 01:34:00 
 
-sqrt: 無乘法，僅用 bitwise, +-, 迴圈
+[sqrt](https://github.com/torvalds/linux/blob/99fa936e8e4f117d62f229003c9799686f74cebc/lib/math/int_sqrt.c#L20): 無乘法，僅用 bitwise, +-, 迴圈
 
 
 

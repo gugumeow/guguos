@@ -94,7 +94,9 @@ W01 HW
 
 [sqrt](https://github.com/torvalds/linux/blob/99fa936e8e4f117d62f229003c9799686f74cebc/lib/math/int_sqrt.c#L20): 無乘法，僅用 bitwise, +-, 迴圈
 
-#### 02:32:00
+使用LLM需先有Domain Knowledge
+
+#### 02:45:00
 
 
 

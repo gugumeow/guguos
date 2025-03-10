@@ -124,9 +124,10 @@ coroutine
 
 man mmap
 preempty
+ipc
+addres kling: ladybird
 
 
 
-
-#### 01:34:00
+#### 02:25:00
 

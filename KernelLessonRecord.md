@@ -123,11 +123,16 @@ coroutine
 #### 01:13:00 
 
 man mmap
+
 preempty
+
 ipc
+
 addres kling: ladybird
+
 同學貢獻
 
+Llama, ollama
 
-#### 02:25:00
+#### 02:58:00
 

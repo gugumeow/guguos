@@ -136,5 +136,10 @@ Llama, ollama
 
 long int: mpi
 
-#### 03:29:00
+no division
+
+c preproceesor
+
+
+#### 03:45:00
 

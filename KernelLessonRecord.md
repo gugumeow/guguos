@@ -3,6 +3,10 @@
 
 [教材](https://wiki.csie.ncku.edu.tw/linux/schedule)
 
+## W03作業
+
+
+
 
 ## W00: 20250218
 
@@ -139,7 +143,6 @@ long int: mpi
 no division
 
 c preproceesor
-
 
 #### 03:45:00
 

@@ -26,7 +26,7 @@ Additional modifications and contributions in this repository are also released 
 
 ## 01.Getting Started 入門
 
-* 僅筆記 Ubuntu 用法
+* 僅筆記 Ubuntu 用法。
 * 安裝所需套件:
 ```
 sudo apt update 

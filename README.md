@@ -16,11 +16,40 @@ Additional modifications and contributions in this repository are also released 
 
 ---
 
-# [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/)
+# [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/) 筆記
 
-00.Intro
+## 00.Intro 簡介
 
-01.Getting Started
+* Linux 0.01 版只有 8413 行程式碼。
+* 用 1000 行 C 語言實作基礎的上下文切換、分頁、使用者模式、命令列 shell、硬碟驅動、文件讀寫。
+* 書 CC BY 4.0 license 協議，程式碼 MIT license 協議。
+
+## 01.Getting Started 入門
+
+* 僅筆記 Ubuntu 用法
+* 安裝所需套件:
+```
+sudo apt update 
+sudo apt install -y clang llvm lld qemu-system-riscv32 curl
+```
+* 下載 OpenSBI（可理解成是 PC 的 BIOS/UEFI）
+```
+curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin
+```
+* 新增 Git 的忽略清單文件：.gitignore
+```
+/disk/*
+!/disk/.gitkeep
+*.map
+*.tar
+*.o
+*.elf
+*.bin
+*.log
+*.pcap
+```
+
+
 
 02.RISC-V 101
 

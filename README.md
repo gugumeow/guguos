@@ -28,10 +28,10 @@ Additional modifications and contributions in this repository are also released 
 
 * 僅筆記 Ubuntu 用法。
 * 安裝所需套件:
-```
+```bash
 sudo apt update 
 sudo apt install -y clang llvm lld qemu-system-riscv32 curl
-
+```
 1.-y：自動回答「是」。
 
 2.clang：LLVM 編譯器前端，編譯 C/C++ 原始碼，生成中間表示（IR）或可執行檔。
@@ -47,7 +47,7 @@ sudo apt install -y clang llvm lld qemu-system-riscv32 curl
 
 
 * 下載 OpenSBI（可理解成是 PC 的 BIOS/UEFI）
-```
+```bash
 curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin
 ```
 * 新增 Git 的忽略清單文件：.gitignore

@@ -32,6 +32,14 @@ Additional modifications and contributions in this repository are also released 
 sudo apt update 
 sudo apt install -y clang llvm lld qemu-system-riscv32 curl
 ```
+1.-y：自動回答「是」。
+2.clang：LLVM 編譯器前端，編譯 C/C++ 原始碼，生成中間表示（IR）或可執行檔。
+3.llvm：LLVM 基礎架構，與 Clang 結合使用進行程式編譯和優化。
+4.lld：LLVM 的程式鏈接器（Linker）。
+5.qemu-system-riscv32：QEMU 的一個子程式，專門用來模擬 RISC-V 32 位元系統。
+6.curl：命令列工具，常用於從伺服器下載檔案或發送 HTTP 請求。
+
+
 * 下載 OpenSBI（可理解成是 PC 的 BIOS/UEFI）
 ```
 curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin

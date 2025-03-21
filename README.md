@@ -64,8 +64,25 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 ```
 
 
+## 02.RISC-V 101
 
-02.RISC-V 101
+* OS 隱藏了不同 CPU 之間的差異。
+* RISC-V CPU 的特色：
+> 1.規範簡單，適合新手。
+>
+> 2.近年流行
+>
+> 3.規範中有詳細紀錄設計決策
+>
+
+* QEMU 虛擬機：
+> 1.模擬真實設備。
+>
+> 2.免費。
+>
+> 3.可查找程式碼找出問題。
+>
+
 
 03.Overview
 

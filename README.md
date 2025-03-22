@@ -88,11 +88,20 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 >>
 >> 2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
 >>
->> ...
-
-
 
 * Compiler Explorer
+>> 1.線上編譯器，學習組合語言的實用工具。
+>>
+>> 2.編寫 C 語言程式碼，會顯示相對應的組合語言。
+>>
+>> 3.預設使用 x86-64 CPU，可指定 RISC-V rv32gc clang (trunk) 輸出 32 位元的 RISC-V 組合語言。
+>>
+>> 4.編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
+>>
+
+* 暫存器
+
+
 
 
 03.Overview

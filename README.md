@@ -83,6 +83,11 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 > 3.可查找程式碼找出問題。
 >
 
+* RISC-V assembly 101
+> 1.RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
+>
+> 2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
+
 
 03.Overview
 

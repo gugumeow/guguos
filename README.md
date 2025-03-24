@@ -88,6 +88,16 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 >>
 >> 2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
 >>
+>> 3.暫存器：
+>>
+>> 4.記憶體存取：lw、sw
+>>
+>> 5.分支：bnez、beq
+>>
+>> 6.函數呼叫：jal
+>>
+>> 7.堆疊：
+>>
 
 * Compiler Explorer
 >> 1.線上編譯器，學習組合語言的實用工具。
@@ -99,10 +109,17 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 >> 4.編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
 >>
 
-* 暫存器
+* CPU 模式：
+>> 1.M-mode：OpenSBI 運行的模式。
+>>
+>> 2.S-mode：核心模式。
+>>
+>> 3.U-mode：應用程式模式。
+>>
 
+* 特權指令：csrr、csrw、csrrw、sret、sfence.vma
 
-
+* 行內組語（Inline assembly）：低階組合語言內嵌在高階語言原始碼中，用於增加執行效率、執行處理器特有指令、執行系統呼叫。
 
 03.Overview
 

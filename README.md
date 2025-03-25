@@ -123,6 +123,17 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 
 03.Overview
 
+* 啟動 OpenSBI：
+
+
+
+
+set -xue 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+1.-x：每個命令執行前都可見（方便除錯）
+2.-u：避免使用未定義變數
+3.-e：當命令失敗時立即停止，避免錯誤擴大影響
+
+
 04.Boot
 
 05.Hello World!

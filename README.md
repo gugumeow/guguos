@@ -123,15 +123,26 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 
 ## 03.Overview
 
-#!/bin/bash 詳細解釋
+* 啟動 OpenSBI：
+
+```
+#!/bin/bash
+```
 
 這是一行 Shebang（#!，稱為 “hash-bang” 或 “sharp-bang”），它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
 
+```
+set -xue
+```
+
+適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+1.每個命令執行前都可見（方便除錯）。
+2.避免使用未定義變數。
+3.當命令失敗時立即停止，避免錯誤擴大影響。
 
 
 
-
-04.Boot
+## 04.Boot
 
 05.Hello World!
 

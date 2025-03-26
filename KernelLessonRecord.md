@@ -25,7 +25,11 @@ linked list sort 作業
 
 * 03:01:00
 
-* 
+list sort:指標、成本分析、效能分析
+
+2024同學成果：Futex - Fast Mutex
+
+* 03.47:00 
 
 
 

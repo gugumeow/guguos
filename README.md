@@ -82,7 +82,7 @@ Additional modifications and contributions in this repository are also released 
 >>
 >> 2.免費。
 >>
->> 3.可查找程式碼找出問題。
+>> 3.可查找原始碼來找出問題。
 >>
 
 * RISC-V assembly 101
@@ -180,7 +180,7 @@ Additional modifications and contributions in this repository are also released 
 >>
 
 
-* QEMU 控制台：Ctrl+A
+* QEMU monitor：按 Ctrl+A 進入
 >>```
 >>C-a h    打印此帮助
 >>C-a x    退出模拟器

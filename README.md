@@ -28,10 +28,10 @@ Additional modifications and contributions in this repository are also released 
 
 * 僅筆記 Ubuntu 用法。
 * 安裝所需套件:
-```bash
-sudo apt update 
-sudo apt install -y clang llvm lld qemu-system-riscv32 curl
-```
+>>```bash
+>>sudo apt update 
+>>sudo apt install -y clang llvm lld qemu-system-riscv32 curl
+>>```
 >> 1.-y：自動回答「是」。
 >>
 >> 2.clang：LLVM 編譯器前端，編譯 C/C++ 原始碼，生成中間表示（IR）或可執行檔。
@@ -43,26 +43,28 @@ sudo apt install -y clang llvm lld qemu-system-riscv32 curl
 >> 5.qemu-system-riscv32：QEMU 的一個子程式，專門用來模擬 RISC-V 32 位元系統。
 >>
 >> 6.curl：命令列工具，常用於從伺服器下載檔案或發送 HTTP 請求。
-
+>>
 
 
 * 下載 OpenSBI（可理解成是 PC 的 BIOS/UEFI）
-```bash
-curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin
-```
-* 新增 Git 的忽略清單文件：.gitignore
-```
-/disk/*
-!/disk/.gitkeep
-*.map
-*.tar
-*.o
-*.elf
-*.bin
-*.log
-*.pcap
-```
+>>```bash
+>>curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic-fw_dynamic.bin
+>>```
+>>
 
+* 新增 Git 的忽略清單文件：.gitignore
+>>```
+>>/disk/*
+>>!/disk/.gitkeep
+>>*.map
+>>*.tar
+>>*.o
+>>*.elf
+>>*.bin
+>>*.log
+>>*.pcap
+>>```
+>>
 
 ## 02.RISC-V 101
 
@@ -124,19 +126,19 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 ## 03.Overview
 
 * 目錄結構：
-```
-├── disk/     - 文件系统内容
-├── common.c  - 内核/用户共用库：printf、memset 等
-├── common.h  - 内核/用户共用库：结构体和常量的定义
-├── kernel.c  - 内核：进程管理、系统调用、设备驱动、文件系统
-├── kernel.h  - 内核：结构体和常量的定义
-├── kernel.ld - 内核：链接器脚本（内存布局定义）
-├── shell.c   - 命令行 shell
-├── user.c    - 用户库：系统调用函数
-├── user.h    - 用户库：结构体和常量的定义
-├── user.ld   - 用户：链接器脚本（内存布局定义）
-└── run.sh    - 构建脚本
-```
+>>```
+>>├── disk/     - 文件系统内容
+>>├── common.c  - 内核/用户共用库：printf、memset 等
+>>├── common.h  - 内核/用户共用库：结构体和常量的定义
+>>├── kernel.c  - 内核：进程管理、系统调用、设备驱动、文件系统
+>>├── kernel.h  - 内核：结构体和常量的定义
+>>├── kernel.ld - 内核：链接器脚本（内存布局定义）
+>>├── shell.c   - 命令行 shell
+>>├── user.c    - 用户库：系统调用函数
+>>├── user.h    - 用户库：结构体和常量的定义
+>>├── user.ld   - 用户：链接器脚本（内存布局定义）
+>>└── run.sh    - 构建脚本
+>>```
 
 ## 04.Boot 引導
 

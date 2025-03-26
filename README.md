@@ -178,9 +178,21 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 >>
 
 
+* QEMU 控制台：Ctrl+A
+>>```
+>>C-a h    打印此帮助
+>>C-a x    退出模拟器
+>>C-a s    将磁盘数据保存回文件（如果使用 -snapshot）
+>>C-a t    切换控制台时间戳
+>>C-a b    发送中断（magic sysrq）
+>>C-a c    在控制台和监视器之间切换
+>>C-a C-a  发送 C-a
+>>```
+>>
 
 
-*
+
+
 
 *
 

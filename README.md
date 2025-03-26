@@ -145,7 +145,44 @@ set -xue
 
 
 
-## 04.Boot
+## 04.Boot 引導
+
+* 啟動 OpenSBI：
+>>1.建立 Shell 腳本：run.sh
+>>```
+>>touch run.sh
+>>chmod +x run.sh
+>>```
+>>
+>>2.編輯腳本：
+>>```
+>>#!/bin/bash
+>>set -xue
+>>
+>># QEMU 文件路徑
+>>QEMU=qemu-system-riscv32
+>>
+>># 啟動 QEMU
+>>$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
+>>```
+>>
+>>3.執行腳本：
+>>```
+>>$ ./run.sh
+>>```
+>>
+
+
+
+
+*
+
+*
+
+
+
+
+
 
 05.Hello World!
 

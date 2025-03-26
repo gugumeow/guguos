@@ -189,6 +189,7 @@ Additional modifications and contributions in this repository are also released 
 >>C-a b    发送中断（magic sysrq）
 >>C-a c    在控制台和监视器之间切换
 >>C-a C-a  发送 C-a
+>>info registers 查看 CPU 暫存器內容
 >>```
 >>
 

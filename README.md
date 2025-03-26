@@ -24,7 +24,7 @@ Additional modifications and contributions in this repository are also released 
 * 用 1000 行 C 語言實作基礎的上下文切換、分頁、使用者模式、命令列 shell、硬碟驅動、文件讀寫。
 * 書 CC BY 4.0 license 協議，程式碼 MIT license 協議。
 
-## 01.Getting Started 入門
+### 01.Getting Started 入門
 
 * 僅筆記 Ubuntu 用法。
 * 安裝所需套件:

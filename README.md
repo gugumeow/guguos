@@ -16,9 +16,9 @@ Additional modifications and contributions in this repository are also released 
 
 ---
 
-# [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/) 筆記
+## [OS in 1,000 Lines](https://operating-system-in-1000-lines.vercel.app/) 筆記
 
-## 00.Intro 簡介
+### 00.Intro 簡介
 
 * Linux 0.01 版只有 8413 行程式碼。
 * 用 1000 行 C 語言實作基礎的上下文切換、分頁、使用者模式、命令列 shell、硬碟驅動、文件讀寫。
@@ -66,7 +66,7 @@ Additional modifications and contributions in this repository are also released 
 >>```
 >>
 
-## 02.RISC-V 101
+### 02.RISC-V 101
 
 * OS 隱藏了不同 CPU 之間的差異。
 * RISC-V CPU 的特色：
@@ -123,7 +123,7 @@ Additional modifications and contributions in this repository are also released 
 
 * 行內組語（Inline assembly）：低階組合語言內嵌在高階語言原始碼中，用於增加執行效率、執行處理器特有指令、執行系統呼叫。
 
-## 03.Overview
+### 03.Overview
 
 * 目錄結構：
 >>```
@@ -140,7 +140,7 @@ Additional modifications and contributions in this repository are also released 
 >>└── run.sh    - 构建脚本
 >>```
 
-## 04.Boot 引導
+### 04.Boot 引導
 
 * 啟動 OpenSBI：
 >>1.建立 Shell 腳本：run.sh

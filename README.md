@@ -123,27 +123,20 @@ curl -LO https://github.com/qemu/qemu/raw/v8.0.4/pc-bios/opensbi-riscv32-generic
 
 ## 03.Overview
 
-* 啟動 OpenSBI：
-
+* 目錄結構：
 ```
-#!/bin/bash
+├── disk/     - 文件系统内容
+├── common.c  - 内核/用户共用库：printf、memset 等
+├── common.h  - 内核/用户共用库：结构体和常量的定义
+├── kernel.c  - 内核：进程管理、系统调用、设备驱动、文件系统
+├── kernel.h  - 内核：结构体和常量的定义
+├── kernel.ld - 内核：链接器脚本（内存布局定义）
+├── shell.c   - 命令行 shell
+├── user.c    - 用户库：系统调用函数
+├── user.h    - 用户库：结构体和常量的定义
+├── user.ld   - 用户：链接器脚本（内存布局定义）
+└── run.sh    - 构建脚本
 ```
-
-這是一行 Shebang（#!，稱為 “hash-bang” 或 “sharp-bang”），它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
-
-```
-set -xue
-```
-
-適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
-
-1.每個命令執行前都可見（方便除錯）。
-
-2.避免使用未定義變數。
-
-3.當命令失敗時立即停止，避免錯誤擴大影響。
-
-
 
 ## 04.Boot 引導
 
@@ -165,6 +158,18 @@ set -xue
 >># 啟動 QEMU
 >>$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
 >>```
+>>`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+>>1.每個命令執行前都可見（方便除錯）。
+>>2.避免使用未定義變數。
+>>3.當命令失敗時立即停止，避免錯誤擴大影響。
+>>
+>>
+>>`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
+>>
+>>
+>>
+>>
+>>
 >>
 >>3.執行腳本：
 >>```

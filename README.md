@@ -32,17 +32,17 @@ Additional modifications and contributions in this repository are also released 
 >sudo apt update 
 >sudo apt install -y clang llvm lld qemu-system-riscv32 curl
 >```
-> 1.-y：自動回答「是」。
+>1. -y：自動回答「是」。
 >
-> 2.clang：LLVM 編譯器前端，編譯 C/C++ 原始碼，生成中間表示（IR）或可執行檔。
+>2. clang：LLVM 編譯器前端，編譯 C/C++ 原始碼，生成中間表示（IR）或可執行檔。
 >
-> 3.llvm：LLVM 基礎架構，與 Clang 結合使用進行程式編譯和優化。
+>3. llvm：LLVM 基礎架構，與 Clang 結合使用進行程式編譯和優化。
 >
-> 4.lld：LLVM 的程式鏈接器（Linker）。
+>4. lld：LLVM 的程式鏈接器（Linker）。
 >
-> 5.qemu-system-riscv32：QEMU 的一個子程式，專門用來模擬 RISC-V 32 位元系統。
+>5. qemu-system-riscv32：QEMU 的一個子程式，專門用來模擬 RISC-V 32 位元系統。
 >
-> 6.curl：命令列工具，常用於從伺服器下載檔案或發送 HTTP 請求。
+>6. curl：命令列工具，常用於從伺服器下載檔案或發送 HTTP 請求。
 >
 
 
@@ -70,35 +70,35 @@ Additional modifications and contributions in this repository are also released 
 
 * OS 隱藏了不同 CPU 之間的差異。
 * RISC-V CPU 的特色：
-> 1.規範簡單，適合新手。
+> 1. 規範簡單，適合新手。
 >
-> 2.近年流行
+> 2. 近年流行
 >
-> 3.規範中有詳細紀錄設計決策
+> 3. 規範中有詳細紀錄設計決策
 >
 
 * QEMU 虛擬機：
-> 1.模擬真實設備。
+> 1. 模擬真實設備。
 >
-> 2.免費。
+> 2. 免費。
 >
-> 3.可查找原始碼來找出問題。
+> 3. 可查找原始碼來找出問題。
 >
 
 * RISC-V assembly 101
->1.RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
+>1. RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
 >
->2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
+>2. 可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
 >
->3.暫存器：
+>3. 暫存器：
 >
->4.記憶體存取：lw、sw
+>4. 記憶體存取：lw、sw
 >
->5.分支：bnez、beq
+>5. 分支：bnez、beq
 >
->6.函數呼叫：jal
+>6. 函數呼叫：jal
 >
->7.堆疊：
+>7. 堆疊：
 >
 
 * Compiler Explorer

@@ -191,6 +191,9 @@ Additional modifications and contributions in this repository are also released 
 >
 
 * 連接器腳本（Linkder Script）：定義可執行檔案記憶體布局的文件。
+>```
+>kernel.ld
+>```
 >```kernel.ld
 >ENTRY(boot)
 >

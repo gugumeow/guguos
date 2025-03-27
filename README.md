@@ -190,12 +190,41 @@ Additional modifications and contributions in this repository are also released 
 >```
 >
 
+* 連接器腳本（Linkder Script）：定義可執行檔案記憶體布局的文件。
 
+```
+*kernel.ld*
+------
 
+ENTRY(boot)
 
+SECTIONS {
+    . = 0x80200000;
 
-*
+    .text :{
+        KEEP(*(.text.boot));
+        *(.text .text.*);
+    }
 
+    .rodata : ALIGN(4) {
+        *(.rodata .rodata.*);
+    }
+
+    .data : ALIGN(4) {
+        *(.data .data.*);
+    }
+
+    .bss : ALIGN(4) {
+        __bss = .;
+        *(.bss .bss.* .sbss .sbss.*);
+        __bss_end = .;
+    }
+
+    . = ALIGN(4);
+    . += 128 * 1024; /* 128KB */
+    __stack_top = .;
+}
+```
 
 
 

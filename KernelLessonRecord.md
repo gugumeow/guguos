@@ -3,6 +3,18 @@
 
 [教材](https://wiki.csie.ncku.edu.tw/linux/schedule)
 
+## W06: 20250327
+
+* 00:00:00
+
+
+
+
+
+
+
+
+
 ## W05: 20250320
 
 作業：紅黑樹實作

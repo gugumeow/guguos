@@ -70,53 +70,53 @@ Additional modifications and contributions in this repository are also released 
 
 * OS 隱藏了不同 CPU 之間的差異。
 * RISC-V CPU 的特色：
-> 1.規範簡單，適合新手。
+>1. 規範簡單，適合新手。
 >
-> 2.近年流行
+>2. 近年流行
 >
-> 3.規範中有詳細紀錄設計決策
+>3. 規範中有詳細紀錄設計決策
 >
 
 * QEMU 虛擬機：
-> 1.模擬真實設備。
+>1. 模擬真實設備。
 >
-> 2.免費。
+>2. 免費。
 >
-> 3.可查找原始碼來找出問題。
+>3. 可查找原始碼來找出問題。
 >
 
 * RISC-V assembly 101
->1.RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
+>1. RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
 >
->2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
+>2. 可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
 >
->3.暫存器：
+>3. 暫存器：
 >
->4.記憶體存取：lw、sw
+>4. 記憶體存取：lw、sw
 >
->5.分支：bnez、beq
+>5. 分支：bnez、beq
 >
->6.函數呼叫：jal
+>6. 函數呼叫：jal
 >
->7.堆疊：
+>7. 堆疊：
 >
 
 * Compiler Explorer
->1.線上編譯器，學習組合語言的實用工具。
+>1. 線上編譯器，學習組合語言的實用工具。
 >
->2.編寫 C 語言程式碼，會顯示相對應的組合語言。
+>2. 編寫 C 語言程式碼，會顯示相對應的組合語言。
 >
->3.預設使用 x86-64 CPU，可指定 RISC-V rv32gc clang (trunk) 輸出 32 位元的 RISC-V 組合語言。
+>3. 預設使用 x86-64 CPU，可指定 RISC-V rv32gc clang (trunk) 輸出 32 位元的 RISC-V 組合語言。
 >
->4.編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
+>4. 編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
 >
 
 * CPU 模式：
->1.M-mode：OpenSBI 運行的模式。
+>1. M-mode：OpenSBI 運行的模式。
 >
->2.S-mode：核心模式。
+>2. S-mode：核心模式。
 >
->3.U-mode：應用程式模式。
+>3. U-mode：應用程式模式。
 >
 
 * 特權指令：csrr、csrw、csrrw、sret、sfence.vma
@@ -144,13 +144,13 @@ Additional modifications and contributions in this repository are also released 
 ### 04.Boot 引導
 
 * 啟動 OpenSBI：
->1.建立 Shell 腳本：run.sh
+>1. 建立 Shell 腳本：run.sh
 >```
 >touch run.sh
 >chmod +x run.sh
 >```
 >
->2.編輯腳本：
+>2. 編輯腳本：
 >```
 >#!/bin/bash
 >set -xue
@@ -162,9 +162,9 @@ Additional modifications and contributions in this repository are also released 
 >$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
 >```
 >`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
->1.每個命令執行前都可見（方便除錯）。
->2.避免使用未定義變數。
->3.當命令失敗時立即停止，避免錯誤擴大影響。
+>1. 每個命令執行前都可見（方便除錯）。
+>2. 避免使用未定義變數。
+>3. 當命令失敗時立即停止，避免錯誤擴大影響。
 >
 >
 >`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
@@ -174,7 +174,7 @@ Additional modifications and contributions in this repository are also released 
 >
 >
 >
->3.執行腳本：
+>3. 執行腳本：
 >```
 >$ ./run.sh
 >```

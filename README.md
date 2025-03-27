@@ -70,54 +70,54 @@ Additional modifications and contributions in this repository are also released 
 
 * OS 隱藏了不同 CPU 之間的差異。
 * RISC-V CPU 的特色：
->> 1.規範簡單，適合新手。
->>
->> 2.近年流行
->>
->> 3.規範中有詳細紀錄設計決策
->>
+> 1.規範簡單，適合新手。
+>
+> 2.近年流行
+>
+> 3.規範中有詳細紀錄設計決策
+>
 
 * QEMU 虛擬機：
->> 1.模擬真實設備。
->>
->> 2.免費。
->>
->> 3.可查找原始碼來找出問題。
->>
+> 1.模擬真實設備。
+>
+> 2.免費。
+>
+> 3.可查找原始碼來找出問題。
+>
 
 * RISC-V assembly 101
->> 1.RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
->>
->> 2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
->>
->> 3.暫存器：
->>
->> 4.記憶體存取：lw、sw
->>
->> 5.分支：bnez、beq
->>
->> 6.函數呼叫：jal
->>
->> 7.堆疊：
->>
+>1.RISC-V 是一種 ISA（指令集架構），定義 CPU 可執行的指令
+>
+>2.可使用 C 語言，再使用編譯器編譯成 RISC-V 組合語言。
+>
+>3.暫存器：
+>
+>4.記憶體存取：lw、sw
+>
+>5.分支：bnez、beq
+>
+>6.函數呼叫：jal
+>
+>7.堆疊：
+>
 
 * Compiler Explorer
->> 1.線上編譯器，學習組合語言的實用工具。
->>
->> 2.編寫 C 語言程式碼，會顯示相對應的組合語言。
->>
->> 3.預設使用 x86-64 CPU，可指定 RISC-V rv32gc clang (trunk) 輸出 32 位元的 RISC-V 組合語言。
->>
->> 4.編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
->>
+>1.線上編譯器，學習組合語言的實用工具。
+>
+>2.編寫 C 語言程式碼，會顯示相對應的組合語言。
+>
+>3.預設使用 x86-64 CPU，可指定 RISC-V rv32gc clang (trunk) 輸出 32 位元的 RISC-V 組合語言。
+>
+>4.編譯選項中可指定優化選項：-O0（關閉優化）、-O2（二級優化）
+>
 
 * CPU 模式：
->> 1.M-mode：OpenSBI 運行的模式。
->>
->> 2.S-mode：核心模式。
->>
->> 3.U-mode：應用程式模式。
->>
+>1.M-mode：OpenSBI 運行的模式。
+>
+>2.S-mode：核心模式。
+>
+>3.U-mode：應用程式模式。
+>
 
 * 特權指令：csrr、csrw、csrrw、sret、sfence.vma
 
@@ -126,72 +126,73 @@ Additional modifications and contributions in this repository are also released 
 ### 03.Overview
 
 * 目錄結構：
->>```
->>├── disk/     - 文件系统内容
->>├── common.c  - 内核/用户共用库：printf、memset 等
->>├── common.h  - 内核/用户共用库：结构体和常量的定义
->>├── kernel.c  - 内核：进程管理、系统调用、设备驱动、文件系统
->>├── kernel.h  - 内核：结构体和常量的定义
->>├── kernel.ld - 内核：链接器脚本（内存布局定义）
->>├── shell.c   - 命令行 shell
->>├── user.c    - 用户库：系统调用函数
->>├── user.h    - 用户库：结构体和常量的定义
->>├── user.ld   - 用户：链接器脚本（内存布局定义）
->>└── run.sh    - 构建脚本
->>```
+>```
+>├── disk/     - 文件系统内容
+>├── common.c  - 内核/用户共用库：printf、memset 等
+>├── common.h  - 内核/用户共用库：结构体和常量的定义
+>├── kernel.c  - 内核：进程管理、系统调用、设备驱动、文件系统
+>├── kernel.h  - 内核：结构体和常量的定义
+>├── kernel.ld - 内核：链接器脚本（内存布局定义）
+>├── shell.c   - 命令行 shell
+>├── user.c    - 用户库：系统调用函数
+>├── user.h    - 用户库：结构体和常量的定义
+>├── user.ld   - 用户：链接器脚本（内存布局定义）
+>└── run.sh    - 构建脚本
+>```
+>
 
 ### 04.Boot 引導
 
 * 啟動 OpenSBI：
->>1.建立 Shell 腳本：run.sh
->>```
->>touch run.sh
->>chmod +x run.sh
->>```
->>
->>2.編輯腳本：
->>```
->>#!/bin/bash
->>set -xue
->>
->># QEMU 文件路徑
->>QEMU=qemu-system-riscv32
->>
->># 啟動 QEMU
->>$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
->>```
->>`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
->>1.每個命令執行前都可見（方便除錯）。
->>2.避免使用未定義變數。
->>3.當命令失敗時立即停止，避免錯誤擴大影響。
->>
->>
->>`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
->>
->>
->>
->>
->>
->>
->>3.執行腳本：
->>```
->>$ ./run.sh
->>```
->>
+>1.建立 Shell 腳本：run.sh
+>```
+>touch run.sh
+>chmod +x run.sh
+>```
+>
+>2.編輯腳本：
+>```
+>#!/bin/bash
+>set -xue
+>
+># QEMU 文件路徑
+>QEMU=qemu-system-riscv32
+>
+># 啟動 QEMU
+>$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
+>```
+>`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+>1.每個命令執行前都可見（方便除錯）。
+>2.避免使用未定義變數。
+>3.當命令失敗時立即停止，避免錯誤擴大影響。
+>
+>
+>`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
+>
+>
+>
+>
+>
+>
+>3.執行腳本：
+>```
+>$ ./run.sh
+>```
+>
 
 
 * QEMU monitor：按 Ctrl+A 進入
->>```
->>C-a h    打印此帮助
->>C-a x    退出模拟器
->>C-a s    将磁盘数据保存回文件（如果使用 -snapshot）
->>C-a t    切换控制台时间戳
->>C-a b    发送中断（magic sysrq）
->>C-a c    在控制台和监视器之间切换
->>C-a C-a  发送 C-a
->>info registers 查看 CPU 暫存器內容
->>```
->>
+>```
+>C-a h    打印此帮助
+>C-a x    退出模拟器
+>C-a s    将磁盘数据保存回文件（如果使用 -snapshot）
+>C-a t    切换控制台时间戳
+>C-a b    发送中断（magic sysrq）
+>C-a c    在控制台和监视器之间切换
+>C-a C-a  发送 C-a
+>info registers 查看 CPU 暫存器內容
+>```
+>
 
 
 

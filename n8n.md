@@ -33,7 +33,7 @@ sudo docker run -d --name n8n -p 5678:5678 n8nio/n8n
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 source ~/.bashrc
 nvm install --lts
-
+```
 
 安裝 n8n：
 ```

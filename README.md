@@ -226,19 +226,18 @@ Additional modifications and contributions in this repository are also released 
 >
 1. kernel.ld：GNU linker script，用來定義 kernel 映像在記憶體中的佈局。即各段 (section) 的起始地址、排列順序及其記憶體範圍。如下圖所示：
 
-0x802xxxxx   ├───────────────────┤  
-__stack_top  │   (Stack Top)     │  堆疊頂端  
-             │     (保留區)       │  128KB 堆疊區域  
-0x802xxxxx   ├───────────────────┤  
-             │       .bss        │  未初始化變數 (預設 0)  
-0x802xxxxx   ├───────────────────┤  
-             │       .data       │  已初始化變數  
-0x802xxxxx   ├───────────────────┤  
-             │      .rodata      │  常數, 只讀資料  
-0x802xxxxx   ├───────────────────┤  
-             │       .text       │  程式碼 (boot, main)  
-0x80200000   └───────────────────┘  
-
+0x802xxxxx   ├───────────────────┤
+__stack_top  │   (Stack Top)     │  堆疊頂端
+│     (保留區)       │  128KB 堆疊區域
+0x802xxxxx   ├───────────────────┤
+│       .bss        │  未初始化變數 (預設 0)
+0x802xxxxx   ├───────────────────┤
+│       .data       │  已初始化變數
+0x802xxxxx   ├───────────────────┤
+│      .rodata      │  常數, 只讀資料
+0x802xxxxx   ├───────────────────┤
+│       .text       │  程式碼 (boot, main)
+0x80200000   └───────────────────┘
 
 
 

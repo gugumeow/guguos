@@ -161,14 +161,14 @@ Additional modifications and contributions in this repository are also released 
 ># 啟動 QEMU
 >$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
 >```
->`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+>-`set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
 >>(1). 每個命令執行前都可見（方便除錯）。
 >>
 >>(2). 避免使用未定義變數。
 >>
 >>(3). 當命令失敗時立即停止，避免錯誤擴大影響。
 >>
->`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
+>-`#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
 >
 >
 >3. 執行腳本：

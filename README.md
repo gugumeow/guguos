@@ -277,14 +277,15 @@ Additional modifications and contributions in this repository are also released 
 >__attribute__((naked))
 >void boot(void) {
 >    __asm__ __volatile__(
->        "mv sp, %[stack_top]\n" // 设置栈指针
->        "j kernel_main\n"       // 跳转到内核主函数
+>        "mv sp, %[stack_top]\n" // 設置堆疊指標
+>        "j kernel_main\n"       // 跳轉到核心主函式 kernel_main
 >        :
->        : [stack_top] "r" (__stack_top) // 将栈顶地址作为 %[stack_top] 传递
+>        : [stack_top] "r" (__stack_top) // 將堆疊頂端地址作為 %[stack_top] 傳遞
 >    );
 >}
 >```
->1. kernel 入口：連結器腳本檔kernek.ld指定入口ENTRY(boot)名稱為boot
+>1. kernel 入口：由連結器腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
+>2. boot 函式：栈指针（sp）被设置为链接器脚本中定义的栈区域的结束地址。然后，它跳转到 kernel_main 函数。
 >
 >
 >

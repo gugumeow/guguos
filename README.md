@@ -277,7 +277,7 @@ Additional modifications and contributions in this repository are also released 
 >__attribute__((naked))
 >void boot(void) {
 >    __asm__ __volatile__(
->        "mv sp, %[stack_top]\n" // 設置堆疊指標
+>        "mv sp, %[stack_top]\n" // 設定堆疊指標
 >        "j kernel_main\n"       // 跳轉到核心主函式 kernel_main
 >        :
 >        : [stack_top] "r" (__stack_top) // 將堆疊頂端地址作為 %[stack_top] 傳遞
@@ -285,9 +285,10 @@ Additional modifications and contributions in this repository are also released 
 >}
 >```
 >1. kernel 入口：由連結器腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
->2. boot 函式：栈指针（sp）被设置为链接器脚本中定义的栈区域的结束地址。然后，它跳转到 kernel_main 函数。
 >
+>2. boot 函式：堆疊指標（sp）設定為連接器腳本中所定義的堆疊區域的結束地址。之後，就跳轉到核心主函式 kernel_main 。注意，堆疊的增長方向是往記憶體低地址方向。
 >
+>3. boot 函式屬性：`__attribute__((naked))` 屬性告訴編譯器不要再函式前後生成不必要的代碼，例如返回指令。可確保內嵌組合語言就是確切的函式體。`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。
 >
 >
 >

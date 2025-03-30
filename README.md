@@ -252,6 +252,8 @@ Additional modifications and contributions in this repository are also released 
 * 最小核心：
 
 >```C
+>
+>// kernel.c
 >typedef unsigned char uint8_t;
 >typedef unsigned int uint32_t;
 >typedef uint32_t size_t;
@@ -282,7 +284,7 @@ Additional modifications and contributions in this repository are also released 
 >    );
 >}
 >```
->
+>1. kernel 入口：連結器腳本檔kernek.ld指定入口ENTRY(boot)名稱為boot
 >
 >
 >

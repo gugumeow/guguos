@@ -29,7 +29,12 @@ ARM: ROP 記憶體簽章
 
 fast switching
 
-**TCP/IP illustrated**
+**TCP/IP illustrated** 自幹 TCP/IP
+
+遞延遲時間 + 高throughout
+
+模組談亂數分佈
+
 
 
 

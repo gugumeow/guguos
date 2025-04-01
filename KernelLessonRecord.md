@@ -53,6 +53,11 @@ DRBL
 
 例外：socket, pipe
 
+一切都是檔案：pipe, plan 9
+
+* 03:48:00 
+
+
 
 
 

@@ -190,7 +190,7 @@ Additional modifications and contributions in this repository are also released 
 >```
 >
 
-* 連接器腳本（Linkder Script）：定義可執行檔記憶體布局的文件。
+* 連接腳本（Linkder Script）：定義可執行檔記憶體布局的文件。
 >```kernel.ld
 >// kernel.ld
 >
@@ -284,11 +284,13 @@ Additional modifications and contributions in this repository are also released 
 >    );
 >}
 >```
->1. kernel 入口：由連結器腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
+>1. kernel 入口：由連結腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
 >
->2. boot 函式：堆疊指標（sp）設定為連接器腳本中所定義的堆疊區域的結束地址。之後，就跳轉到核心主函式 kernel_main 。注意，堆疊的增長方向是往記憶體低地址方向。
+>2. boot 函式：堆疊指標（sp）設定為連接腳本中所定義的堆疊區域的結束地址。之後，就跳轉到核心主函式 kernel_main 。注意，堆疊的增長方向是往記憶體低地址方向。
 >
->3. boot 函式屬性：`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。
+>3. boot 函式屬性：`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。由于 OpenSBI 简单地跳转到 0x80200000 而不知道入口点，所以需要将 boot 函数放在 0x80200000。
+
+
 >
 >
 >

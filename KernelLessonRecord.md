@@ -45,7 +45,13 @@ Linux 可在開機網路連線後，就可存取外部資源
 
 Windows 需開機完，才可以使用網路芳鄰的資源
 
+03:20:00 
 
+diskless linux
+
+DRBL
+
+例外：socket, pipe
 
 
 

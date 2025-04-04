@@ -286,33 +286,20 @@ Additional modifications and contributions in this repository are also released 
 >```
 >1. kernel 入口：由連結腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
 >
->2. boot 函式：`__asm__ __volatile__(...)`，其中`__asm__` (或 `asm`) 表示這是內嵌組合語法。`__volatile__`告訴編譯器不要對這段組合語優化，確保它一定會執行，避免編譯器因優化而移除或改變指令順序。`mv sp, %[stack_top]`設定堆疊指標（sp）為連接腳本中所定義的堆疊區域的結束地址。這是因為啟動時處理器的 sp 可能是未定義的，或者指向錯誤的位置，因此需要手動設置正確的堆疊起始位置。注意，堆疊的增長方向是往記憶體低地址方向。mv 指令是 RISC-V 的 addi rd, rs, 0 的別名，效果是將 stack_top 的值複製到 sp。接著，`j kernel_main`就跳轉到內核主函式 kernel_main 。這是一個無條件跳轉指令，開始執行內核的主函式。
+>2. boot 函式：`__asm__ __volatile__(...)`，其中`__asm__` (或 `asm`) 表示這是內嵌組合語法。`__volatile__`告訴編譯器不要對這段組合語優化，確保它一定會執行，避免編譯器因優化而移除或改變指令順序。`mv sp, %[stack_top]`設定堆疊指標（sp）為連接腳本中所定義的堆疊區域的結束地址。這是因為啟動時處理器的
 >
->4. boot 函式屬性：`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
-
-詳細分析
-
-
-2. "mv sp, %[stack_top]\n"
-	•	mv 指令是 RISC-V 的 addi rd, rs, 0 的別名，效果是將 stack_top 的值複製到 sp。
-	•	%[stack_top] 是內嵌組合語的佔位符，對應後面的 : [stack_top] "r" (__stack_top)，表示 __stack_top 這個變數的值會被當作一般暫存器 ("r") 傳入。
-
-3. "j kernel_main\n"
-	•	j kernel_main 是 RISC-V 的無條件跳轉指令，會將程式計數器 (PC) 設為 kernel_main，開始執行內核的主要邏輯。
-
-⸻
-
-可能的應用情境
-
-這段程式碼通常出現在裸機 (bare-metal) 或作業系統內核 (kernel) 的初始化階段：
-	•	在啟動時 (bootloader 或作業系統載入後)，處理器需要有一個正確的堆疊指標 (sp)。
-	•	設定好堆疊指標後，就可以跳轉到 kernel_main 開始執行內核初始化。
-
-這段程式碼應該在 RISC-V 架構的 OS 核心或 Bootloader 中常見，適合用來初始化系統環境並轉交控制權給內核的主要函式。
-
-
-
-
+>3. GCC 內嵌組合語法(`__asm__`)基本格式：
+>```c
+>__asm__ __volatile__(
+>    "指令"    // 組合語言指令
+>    : "約束1"(輸出操作數)    // 沒有輸出操作數時，留空白
+>    : "約束2"(輸入操作數)    // 表示變數 `__stack_top` 會被存入某個暫存器 `r`
+>    : "約束3"(損壞的暫存器)    // 可選。沒有需要標示的破壞暫存器，所以省略
+>);
+>```
+>4. boot 函式屬性：
+>`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。
+`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
 
 
 

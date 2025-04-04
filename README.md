@@ -289,17 +289,17 @@ Additional modifications and contributions in this repository are also released 
 >2. boot 函式：`__asm__ __volatile__(...)`，其中`__asm__` (或 `asm`) 表示這是內嵌組合語法。`__volatile__`告訴編譯器不要對這段組合語優化，確保它一定會執行，避免編譯器因優化而移除或改變指令順序。`mv sp, %[stack_top]`設定堆疊指標（sp）為連接腳本中所定義的堆疊區域的結束地址。這是因為啟動時處理器的
 >
 >3. GCC 內嵌組合語法(`__asm__`)基本格式：
->```c
->__asm__ __volatile__(
->    "指令"    // 組合語言指令
->    : "約束1"(輸出操作數)    // 沒有輸出操作數時，留空白
->    : "約束2"(輸入操作數)    // 表示變數 `__stack_top` 會被存入某個暫存器 `r`
->    : "約束3"(損壞的暫存器)    // 可選。沒有需要標示的破壞暫存器，所以省略
->);
->```
+>>```c
+>>__asm__ __volatile__(
+>>    "指令"    // 組合語言指令
+>>    : "約束1"(輸出操作數)    // 沒有輸出操作數時，留空白
+>>    : "約束2"(輸入操作數)    // 表示變數 `__stack_top` 會被存入某個暫存器 `r`
+>>    : "約束3"(損壞的暫存器)    // 可選。沒有需要標示的破壞暫存器，所以省略
+>>);
+>>```
 >4. boot 函式屬性：
 >+ `__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。
->+`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
+>+ `__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
 >
 >
 >

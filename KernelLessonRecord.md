@@ -3,6 +3,12 @@
 
 [教材](https://wiki.csie.ncku.edu.tw/linux/schedule)
 
+## W07: 20250404
+
+開始進入 Linux 核心程式碼
+
+
+
 ## W06: 20250327
 
 作業說明：recursive log計算

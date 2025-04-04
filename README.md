@@ -161,14 +161,14 @@ Additional modifications and contributions in this repository are also released 
 ># 啟動 QEMU
 >$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot
 >```
->- `set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
+>+ `set -xue` 適合用在需要嚴格錯誤檢查的 Bash 腳本，確保：
 >>(1). 每個命令執行前都可見（方便除錯）。
 >>
 >>(2). 避免使用未定義變數。
 >>
 >>(3). 當命令失敗時立即停止，避免錯誤擴大影響。
 >>
->- `#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
+>+ `#!` Shebang，稱為 “hash-bang” 或 “sharp-bang”，它的作用是指定該腳本應該由哪個解釋器（interpreter）來執行。
 >
 >
 >3. 執行腳本：
@@ -298,8 +298,12 @@ Additional modifications and contributions in this repository are also released 
 >);
 >```
 >4. boot 函式屬性：
->`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。
-`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
+>+ `__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。
+>+`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
+>
+>
+>
+
 
 
 

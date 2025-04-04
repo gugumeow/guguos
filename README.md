@@ -286,18 +286,9 @@ Additional modifications and contributions in this repository are also released 
 >```
 >1. kernel 入口：由連結腳本檔`kernel.ld`指定入口函式名稱為 boot `ENTRY(boot)`。
 >
->2. boot 函式：堆疊指標（sp）設定為連接腳本中所定義的堆疊區域的結束地址。之後，就跳轉到核心主函式 kernel_main 。注意，堆疊的增長方向是往記憶體低地址方向。
+>2. boot 函式：`mv sp, %[stack_top]`設定堆疊指標（sp）為連接腳本中所定義的堆疊區域的結束地址。這是因為啟動時處理器的 sp 可能是未定義的，或者指向錯誤的位置，因此需要手動設置正確的堆疊起始位置。注意，堆疊的增長方向是往記憶體低地址方向。接著，`j kernel_main`就跳轉到內核主函式 kernel_main 。這是一個無條件跳轉指令，開始執行內核的主函式。
 >
 >3. boot 函式屬性：`__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。`__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
-
-
-這段 boot() 函式的作用是在 RISC-V 平台上進行基本的系統啟動，它主要做了兩件事：
-	1.	設置堆疊指標 (sp)
-mv sp, %[stack_top] 將 __stack_top 的值賦給 sp (堆疊指標)。這是因為啟動時處理器的 sp 可能是未定義的，或者指向錯誤的位置，因此需要手動設置正確的堆疊起始位置。
-	2.	跳轉到內核主函式 (kernel_main)
-j kernel_main 直接跳轉到 kernel_main，這是一個無條件跳轉指令，開始執行內核的主函式。
-
-⸻
 
 詳細分析
 

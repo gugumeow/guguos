@@ -36,6 +36,9 @@ ATC 小故事、worst case response time, worst case execute time
 
 
 
+
+
+
 ## W06: 20250327
 
 作業說明：recursive log計算

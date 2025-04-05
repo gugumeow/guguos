@@ -25,6 +25,11 @@ tanh 泰勒展開計算，精度問題：e為底改2為底，泰勒展開只取�
 
 休息
 
+ARM big.LITTLE: e core, p core
+
+Linux 6.6+排程器： CFS 改成 EEVDF
+
+ATC 小故事、worst case response time, worst case execute time
 
 
 

@@ -301,8 +301,16 @@ Additional modifications and contributions in this repository are also released 
 >+ `__attribute__((naked))` 屬性告訴編譯器不要在函式前後生成不必要的代碼。例如不要自動產生函式的進入 (prologue) 和返回 (epilogue) 代碼，只保留函式內部的指令。
 >+ `__attribute__((section(".text.boot")))` 屬性控制函式在連接器腳本中的放置。在 linker script (連結腳本) 中，必須定義 .text.boot，這樣 boot_function() 就會被放到 .text.boot 這個記憶體區段中，而不是一般的 .text 區段。因 OpenSBI 簡單地跳轉到 0x80200000 而不知道入口點，所以需要將 boot 函式放在 0x80200000 位址。
 >
->5. kernel_main 函式：
+>5. kernel_main 函式：使用 memset 函式將 .bss 段初始化為零。之後，函式進入一個無限循環，核心終止。
 >
+
+.bss 段初始化
+在 kernel_main 函数中，首先使用 memset 函数将 .bss 段初始化为零。虽然某些引导加载程序可能会识别并清零 .bss 段，但我们以防万一手动初始化它。最后，函数进入一个无限循环，内核终止。
+
+
+
+
+
 >6. memset 函式：
 >
 >7. extern char 宣告：

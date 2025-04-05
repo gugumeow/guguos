@@ -31,6 +31,8 @@ Linux 6.6+排程器： CFS 改成 EEVDF
 
 ATC 小故事、worst case response time, worst case execute time
 
+* 02:37:00
+
 
 
 

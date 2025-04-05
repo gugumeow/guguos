@@ -308,6 +308,7 @@ Additional modifications and contributions in this repository are also released 
 >7. extern char 宣告：宣告了三個外部符號，它們通常是由鏈結器（linker）設定的記憶體區域，用於嵌入式系統或裸機程式設計中。這些符號用來指向程式中不同的記憶體區段。`__bss` 指向未初始化變數的開始位置，通常是 BSS 區段的起始地址。`__bss_end` 指向 BSS 區段的結束位置，用來確定需要初始化的記憶體範圍。`__stack_top` 指向堆疊區域的頂端位置，用來設置堆疊指標。BSS 區段的大小通常是由 `__bss_end` - `__bss` 計算出來的，這樣就能確定需要填充的範圍。這些符號是裸機啟動程式的基本要素，通常會被用於記憶體初始化（例如清零 BSS 區段）以及設置堆疊指標等工作。
 >
 
+
 05.Hello World!
 
 06.C Standard Library

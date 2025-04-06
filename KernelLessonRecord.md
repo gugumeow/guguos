@@ -51,9 +51,11 @@ real time KVM(Linux提的虛擬化技術)
 
 Linux 核心背後很多數學：但沒有展現出來，也沒有幾本書充分描述
 
+程式交易裡面一堆 Linux：資訊人員懂得如何將策略寫成程式描述，且降低延遲，比別人早下單才能賺到錢。
 
+**不可打斷**的行程：有機會動態調整優先權 bonus system，CFS -> EEDVF
 
-
+OS好書：Operating Systems - Three Easy Pieces，Time sharing 即 Multiplexting
 
 
 

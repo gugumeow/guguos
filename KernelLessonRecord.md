@@ -33,7 +33,7 @@ ATC 小故事、worst case response time, worst case execute time
 
 * 02:37:00
 
-
+real time KVM(Linux提的虛擬化技術)
 
 
 

@@ -57,6 +57,21 @@ Linux 核心背後很多數學：但沒有展現出來，也沒有幾本書充�
 
 OS好書：Operating Systems - Three Easy Pieces，Time sharing 即 Multiplexting
 
+* 03:42:00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

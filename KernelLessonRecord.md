@@ -35,7 +35,7 @@ ATC 小故事、worst case response time, worst case execute time
 
 real time KVM(Linux提的虛擬化技術)
 
-
+程式交易：關鍵交易要 microsecond 等級
 
 
 

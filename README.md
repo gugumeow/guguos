@@ -313,29 +313,29 @@ Additional modifications and contributions in this repository are also released 
 >+ 這些符號是裸機啟動程式的基本要素，通常會被用於記憶體初始化（例如清零 BSS 區段）以及設置堆疊指標等工作。
 >
 
-* 運行起來
+* 運行起來：`./run.sh`
 
-```bash
-#run.sh
-
-#!/bin/bash
-set -xue
-
-QEMU=qemu-system-riscv32
-
-# clang 路径和编译器标志
-CC=/opt/homebrew/opt/llvm/bin/clang  # Ubuntu 用户：使用 CC=clang
-CFLAGS="-std=c11 -O2 -g3 -Wall -Wextra --target=riscv32-unknown-elf -fno-stack-protector -ffreestanding -nostdlib"
-
-# 构建内核
-$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf \
-    kernel.c
-
-# 启动 QEMU
-$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot \
-    -kernel kernel.elf
-```
-
+>```bash
+># run.sh
+>
+>#!/bin/bash
+>set -xue
+>
+>QEMU=qemu-system-riscv32
+>
+># clang 路徑和編譯器標誌
+>CC=/opt/homebrew/opt/llvm/bin/clang  # Ubuntu 用户：使用 CC=clang
+>CFLAGS="-std=c11 -O2 -g3 -Wall -Wextra --target=riscv32-unknown-elf -fno-stack-protector -ffreestanding -nostdlib"
+>
+># 構建核心
+>$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf \
+>    kernel.c
+>
+># 啟動 QEMU
+>$QEMU -machine virt -bios default -nographic -serial mon:stdio --no-reboot \
+>    -kernel kernel.elf
+>```
+>
 
 
 

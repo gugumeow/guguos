@@ -336,8 +336,18 @@ Additional modifications and contributions in this repository are also released 
 >    -kernel kernel.elf
 >```
 >
-
-
+>1. clang選項（即 CFLAGS 變數）：
+>+ `-std=c11`	使用 C11。
+>+ `-O2` 启用优化以生成高效的机器代码。
+>+ `-g3` 生成最大量的调试信息。
+>+ `-Wall` 启用主要警告。
+>+ `-Wextra` 启用额外警告。
+>+ `--target=riscv32-unknown-elf` 编译为 32 位 RISC-V。
+>+ `-fno-stack-protector` 禁用栈保护功能（#31 参考)
+>+ `-ffreestanding` 不使用主机环境（你的开发环境）的标准库。
+>+ `-nostdlib` 不链接标准库。
+>+ `-Wl,-Tkernel.ld	指定链接器脚本。
+>+ `-Wl,-Map=kernel.map	输出映射文件（链接器
 
 
 

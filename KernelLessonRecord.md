@@ -63,7 +63,7 @@ preemption(make configuration), htop, select
 
 * 04:01:00
 
-
+LAZY（不重要的事晚點一起做）
 
 
 

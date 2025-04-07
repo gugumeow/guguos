@@ -65,6 +65,19 @@ preemption(make configuration), htop, select
 
 LAZY（不重要的事晚點一起做）
 
+時脈4G已是極限：效能功耗問題
+
+異質多核
+
+cgroups:類似分組喜歡找夥伴
+
+* 04:16:00
+
+
+
+
+
+
 
 
 

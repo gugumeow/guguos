@@ -73,7 +73,11 @@ cgroups:類似分組喜歡找夥伴
 
 * 04:16:00
 
+案例探討：Linux scheduler - a decade of wasted cores
 
+EEVDF scheduler: 降低排程導致的延遲（早在CFS 已解決 fairness 問題），Linux 6.6 因引入，但每次更新版本的 EEDVF 都不一樣
+
+EEMA 在 Linux 中是用在統計上
 
 
 

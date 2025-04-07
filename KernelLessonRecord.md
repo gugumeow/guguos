@@ -59,6 +59,16 @@ OS好書：Operating Systems - Three Easy Pieces，Time sharing 即 Multiplextin
 
 * 03:42:00
 
+preemption(make configuration), htop, select
+
+* 04:01:00
+
+
+
+
+
+
+
 
 
 

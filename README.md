@@ -351,6 +351,11 @@ Additional modifications and contributions in this repository are also released 
 >+ `-Wl,-Tkernel.ld	指定链接器脚本。
 >+ `-Wl,-Map=kernel.map	输出映射文件（链接器
 
+* 第一次核心除錯
+
+>當你執行 run.sh 時，核心會進入無限迴圈。沒有任何跡象顯示核心正在正常運作。但別擔心，這在底層開發中是很常見的情況！這正是 QEMU 除錯功能派上用場的時候。
+
+
 
 
 05.Hello World!

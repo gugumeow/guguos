@@ -122,7 +122,8 @@ http://localhost:5678
 ```
 瀏覽器輸入：http://localhost:5678
 
-* 注意： *
+注意：
+
 啟動 n8n 出現這個系統已停用指令碼執行，無法載入 n8n.ps1。以系統管理員開啟 PowerShell 視窗，執行：
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser

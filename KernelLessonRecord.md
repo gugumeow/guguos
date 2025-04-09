@@ -18,7 +18,7 @@ RT system: A/V sync, 指紋辨識(biometric)
 
 Multilevel feedback queue (MLFB), CFS
 
-* 01:00:00
+* 01:10:00
 
 
 

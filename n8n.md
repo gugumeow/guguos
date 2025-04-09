@@ -1,4 +1,4 @@
-## Linux Mint 上安裝 n8n 有幾種方式，以下是三種常見的方法：
+## Linux Mint 上安裝 n8n 的三種方法：
 
 ### 方法一：使用 Docker 安裝（推薦）
 

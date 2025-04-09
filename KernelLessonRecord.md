@@ -12,6 +12,17 @@ e 尤拉數：工程與數學、thermal、取樣定理
 
 htc
 
+Linux 排程器沒有 ready queue 概念：不需要的東西不做
+
+RT system: A/V sync, 指紋辨識(biometric)
+
+Multilevel feedback queue (MLFB), CFS
+
+* 01:00:00
+
+
+
+
 
 
 

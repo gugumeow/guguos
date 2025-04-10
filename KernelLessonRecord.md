@@ -20,13 +20,19 @@ Multilevel feedback queue (MLFB), CFS
 
 * 01:10:00
 
-Linux 0.11 scheduler: Good code
+Linux 0.01 scheduler: Good code
+
+linux/sched.c
 
 nice: -19 - 20
 
-* 01:30:00 
+Linux 1.2 (o) schedule: for SMP 成為主流
 
+processor affinity
 
+* 02:20:00 
+
+4 core SMP 運行 linux，裡面有幾套 OS
 
 
 

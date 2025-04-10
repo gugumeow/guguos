@@ -20,6 +20,12 @@ Multilevel feedback queue (MLFB), CFS
 
 * 01:10:00
 
+Linux 0.11 scheduler: Good code
+
+nice: -19 - 20
+
+
+
 
 
 

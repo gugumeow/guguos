@@ -24,7 +24,7 @@ Linux 0.11 scheduler: Good code
 
 linux/sched.c
 
-nice: -19 - 20
+nice: -19 ~ 20
 
 Linux 1.2 (o) schedule: for SMP 成為主流
 
@@ -32,7 +32,7 @@ processor affinity
 
 * 02:20:00 
 
-4 core SMP 運行 linux，裡面有幾套 OS
+4 core 的 SMP 運行 linux，裡面有幾套 OS
 
 
 

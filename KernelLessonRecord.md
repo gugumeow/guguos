@@ -24,7 +24,7 @@ Linux 0.11 scheduler: Good code
 
 nice: -19 - 20
 
-
+* 01:30:00 
 
 
 

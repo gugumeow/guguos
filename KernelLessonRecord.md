@@ -54,9 +54,23 @@ O(n) schedule: this.cpu is per-cpu data/variable, 跳過 cache coherence
 
 linux kernel version history
 
-O(1) scheduler: Ingo, select a task in constant time, still w/KBL
+O(1) scheduler: Ingo, bitmap - select a task in constant time, still w/KBL
 
 03:50:00 
+
+O(1) - per-cpu queue,
+
+04:05:00 
+
+
+
+
+
+
+
+
+
+
 
 
 

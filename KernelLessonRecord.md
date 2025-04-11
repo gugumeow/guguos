@@ -34,7 +34,7 @@ processor affinity
 
 quadcore 的 SMP 運行 linux，裡面有幾套 OS？1套
 
-ipi:cup shoulder tap
+IPI: cup shoulder tap
 
 * 02:45:00 
 
@@ -44,7 +44,11 @@ SMP v.s. AMP
 
 amp rtos linux
 
+spinlock
 
+BKL: Big Kernel Lock，搬家時，所有CPU都要停止
+
+03:00:00
 
 
 

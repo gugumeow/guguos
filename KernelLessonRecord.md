@@ -54,7 +54,7 @@ O(n) schedule: this.cpu is per-cpu data/variable, 跳過 cache coherence
 
 linux kernel version history
 
-O(1) scheduler: Ingo, select a task in constant time
+O(1) scheduler: Ingo, select a task in constant time, still w/KBL
 
 03:50:00 
 

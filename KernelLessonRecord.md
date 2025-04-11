@@ -32,13 +32,20 @@ processor affinity
 
 * 02:20:00 
 
-quadcore 的 SMP 運行 linux，裡面有幾套 OS
+quadcore 的 SMP 運行 linux，裡面有幾套 OS？1套
 
 ipi:cup shoulder tap
 
 * 02:45:00 
 
 上帝視角
+
+SMP v.s. AMP
+
+amp rtos linux
+
+
+
 
 
 

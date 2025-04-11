@@ -50,9 +50,13 @@ BKL: Big Kernel Lock，搬家時，所有CPU都要停止
 
 03:00:00
 
+O(n) schedule: this.cpu is per-cpu data/variable, 跳過 cache coherence
+
+linux kernel version history
 
 
 
+03:50:00 
 
 
 

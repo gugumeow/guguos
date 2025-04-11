@@ -3,6 +3,25 @@
 
 [教材](https://wiki.csie.ncku.edu.tw/linux/schedule)
 
+## W08-2: 20250410
+
+測驗題說明：web server epoil
+
+* 00:13:00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## W08-1: 20250408
 
@@ -58,24 +77,7 @@ O(1) scheduler: Ingo, bitmap - select a task in constant time, still w/KBL
 
 03:50:00 
 
-O(1) - per-cpu queue,
-
-04:05:00 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+O(1) - per-cpu queue
 
 
 ## W07: 20250404

@@ -11,10 +11,15 @@
 
 kweb，之後http3 建構在 UDP 之上，以往是 TCP 上，khttpd
 
+namespace: from plan 9
 
+sk: socket, skb: socket buffer
 
+KGDB: kernel debugger
 
+bh: bottom half
 
+* 01:20:00
 
 
 

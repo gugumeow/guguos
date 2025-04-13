@@ -45,8 +45,9 @@ page fault
 
 rcu, work stealing, atomics, RMW, 生產者消費者問題， dmesg
 
+OoOE: out of order execution
 
-* 03:27:00
+* 03:50:00
 
 
 

@@ -37,7 +37,16 @@ Brendan: CPU utilization is wrong, IPC, perf state, Xt or Xt-1, soomRV 慕尼黑
 
 ILP: 軟體工程師常被責備是因為對硬體的掌握度很低，導致效能不彰
 
-* 02:12:00
+cpu效能計算：給人看的 load average, 給排程器看的 pelt
+
+Linux 註解只能用 ASCII 表示
+
+page fault
+
+rcu, work stealing, atomics, RMW, 生產者消費者問題， dmesg
+
+
+* 03:27:00
 
 
 

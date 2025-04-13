@@ -21,6 +21,23 @@ bh: bottom half
 
 * 01:20:00
 
+container_of, schedule_work
+
+回顧同學作業
+
+學店仔面試要用知識來武裝自己：youtube 學習基本知識
+
+Brendan: CPU utilization is wrong
+
+* 01:54:00
+
+
+
+
+
+
+
+
 
 
 

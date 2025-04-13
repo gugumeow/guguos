@@ -27,9 +27,36 @@ container_of, schedule_work
 
 學店仔面試要用知識來武裝自己：youtube 學習基本知識
 
-Brendan: CPU utilization is wrong
+Brendan: CPU utilization is wrong, IPC, perf state, Xt or Xt-1, soomRV 慕尼黑大學專題自幹CPU, 
 
-* 01:54:00
+休息
+
+* 02:02:00
+
+測量是大學問，統計
+
+ILP: 軟體工程師常被責備是因為對硬體的掌握度很低，導致效能不彰
+
+* 02:12:00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

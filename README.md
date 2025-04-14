@@ -374,6 +374,18 @@ Additional modifications and contributions in this repository are also released 
 > ```
 >
 
+```
+(qemu) stop             ← 进程停止
+(qemu) info registers   ← 你可以观察停止时的状态
+(qemu) cont             ← 进程继续
+```
+
+
+
+
+
+
+
 
 
 05.Hello World!

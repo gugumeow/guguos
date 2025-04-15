@@ -401,6 +401,22 @@ Disassembly of section .text:
 80200014: f5 bf         j       0x80200010 <kernel_main>  ← pc 在这里
 ```
 
+要查看链接器放置 __stack_top 的位置，检查 kernel.map 文件：
+```
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0 80200000     1 . = 0x80200000
+80200000 80200000       16     4 .text
+...
+80200016 80200016        2     1 . = ALIGN ( 4 )
+80200018 80200018    20000     1 . += 128 * 1024
+80220018 80220018        0     1 __stack_top = .
+```
+
+也可以使用 llvm-nm 检查函数/变量的地址：
+
+
+
+
 
 
 

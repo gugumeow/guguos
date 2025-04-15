@@ -383,21 +383,22 @@ Additional modifications and contributions in this repository are also released 
 使用反編譯器（llvm-objdump）來確定具體的程式行：
 
 ```
-QEMU 8.0.2 monitor - type 'help' for more information
-(qemu) info registers
+$ llvm-objdump -d kernel.elf
 
-CPU#0
- V      =   0
- pc       80200014  ← 将要执行的指令的地址（程序计数器）
- ...
- x0/zero  00000000 x1/ra    8000a084 x2/sp    80220018 x3/gp    00000000  ← 每个寄存器的值
- x4/tp    80033000 x5/t0    00000001 x6/t1    00000002 x7/t2    00000000
- x8/s0    80032f50 x9/s1    00000001 x10/a0   80220018 x11/a1   87e00000
- x12/a2   00000007 x13/a3   00000019 x14/a4   00000000 x15/a5   00000001
- x16/a6   00000001 x17/a7   00000005 x18/s2   80200000 x19/s3   00000000
- x20/s4   87e00000 x21/s5   00000000 x22/s6   80006800 x23/s7   8001c020
- x24/s8   00002000 x25/s9   8002b4e4 x26/s10  00000000 x27/s11  00000000
- x28/t3   616d6569 x29/t4   8001a5a1 x30/t5   000000b4 x31/t6   00000000
+kernel.elf:     file format elf32-littleriscv
+
+Disassembly of section .text:
+
+80200000 <boot>:  ← boot 函数
+80200000: 37 05 22 80   lui     a0, 524832
+80200004: 13 05 85 01   addi    a0, a0, 24
+80200008: 2a 81         mv      sp, a0
+8020000a: 6f 00 60 00   j       0x80200010 <kernel_main>
+8020000e: 00 00         unimp
+
+80200010 <kernel_main>:  ← kernel_main 函数
+80200010: 73 00 50 10   wfi
+80200014: f5 bf         j       0x80200010 <kernel_main>  ← pc 在这里
 ```
 
 

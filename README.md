@@ -422,8 +422,14 @@ $ llvm-nm kernel.elf
 80200010 T kernel_main
 ```
 
+第一列是它们被放置的地址（VMA）。你可以看到 __stack_top 被放置在 0x80220018。这确认了栈指针在 boot 函数中被正确设置。漂亮！
 
-
+随着程序的运行，info registers 的结果会发生变化。如果你想暂时停止模拟，可以在 QEMU 监视器中使用 stop 命令：
+```
+(qemu) stop             ← 进程停止
+(qemu) info registers   ← 你可以观察停止时的状态
+(qemu) cont             ← 进程继续
+```
 
 05.Hello World!
 

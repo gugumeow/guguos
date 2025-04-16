@@ -413,9 +413,14 @@ Disassembly of section .text:
 ```
 
 也可以使用 llvm-nm 检查函数/变量的地址：
-
-
-
+```
+$ llvm-nm kernel.elf
+80200010 t .LBB0_1
+00000000 N .Lline_table_start0
+80220018 T __stack_top
+80200000 T boot
+80200010 T kernel_main
+```
 
 
 

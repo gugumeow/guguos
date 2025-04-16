@@ -431,7 +431,18 @@ $ llvm-nm kernel.elf
 (qemu) cont             ← 进程继续
 ```
 
-05.Hello World!
+### 05.Hello World!
+
+* 向 SBI 說hello
+
+
+
+
+
+
+
+
+
 
 06.C Standard Library
 

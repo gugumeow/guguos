@@ -373,45 +373,39 @@ Additional modifications and contributions in this repository are also released 
 > x28/t3   616d6569 x29/t4   8001a5a1 x30/t5   000000b4 x31/t6   00000000
 > ```
 >
-
-```
-(qemu) stop             ← 进程停止
-(qemu) info registers   ← 你可以观察停止时的状态
-(qemu) cont             ← 进程继续
-```
-
-使用反編譯器（llvm-objdump）來確定具體的程式行：
-
-```
-$ llvm-objdump -d kernel.elf
-
-kernel.elf:     file format elf32-littleriscv
-
-Disassembly of section .text:
-
-80200000 <boot>:  ← boot 函数
-80200000: 37 05 22 80   lui     a0, 524832
-80200004: 13 05 85 01   addi    a0, a0, 24
-80200008: 2a 81         mv      sp, a0
-8020000a: 6f 00 60 00   j       0x80200010 <kernel_main>
-8020000e: 00 00         unimp
-
-80200010 <kernel_main>:  ← kernel_main 函数
-80200010: 73 00 50 10   wfi
-80200014: f5 bf         j       0x80200010 <kernel_main>  ← pc 在这里
-```
-
-要查看链接器放置 __stack_top 的位置，检查 kernel.map 文件：
-```
-     VMA      LMA     Size Align Out     In      Symbol
-       0        0 80200000     1 . = 0x80200000
-80200000 80200000       16     4 .text
-...
-80200016 80200016        2     1 . = ALIGN ( 4 )
-80200018 80200018    20000     1 . += 128 * 1024
-80220018 80220018        0     1 __stack_top = .
-```
-
+>使用反編譯器（llvm-objdump）來確定具體的程式行：
+>
+>```
+>$ llvm-objdump -d kernel.elf
+>
+>kernel.elf:     file format elf32-littleriscv
+>
+>Disassembly of section .text:
+>
+>80200000 <boot>:  ← boot 函数
+>80200000: 37 05 22 80   lui     a0, 524832
+>80200004: 13 05 85 01   addi    a0, a0, 24
+>80200008: 2a 81         mv      sp, a0
+>8020000a: 6f 00 60 00   j       0x80200010 <kernel_main>
+>8020000e: 00 00         unimp
+>
+>80200010 <kernel_main>:  ← kernel_main 函数
+>80200010: 73 00 50 10   wfi
+>80200014: f5 bf         j       0x80200010 <kernel_main>  ← pc 在这里
+>```
+>
+> 查看 kernel.map 文件，檢視鏈結器放置 __stack_top 的位址；
+> 
+>```
+>     VMA      LMA     Size Align Out     In      Symbol
+>       0        0 80200000     1 . = 0x80200000
+>80200000 80200000       16     4 .text
+>...
+>80200016 80200016        2     1 . = ALIGN ( 4 )
+>80200018 80200018    20000     1 . += 128 * 1024
+>80220018 80220018        0     1 __stack_top = .
+>```
+>
 也可以使用 llvm-nm 检查函数/变量的地址：
 ```
 $ llvm-nm kernel.elf

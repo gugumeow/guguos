@@ -17,7 +17,11 @@ XDP: 抵禦 DDoS
 
 安裝 simrupt
 
-* 00:27:00
+DAC
+
+workqueue
+
+* 00:40:00
 
 
 

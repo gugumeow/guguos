@@ -405,7 +405,8 @@ Additional modifications and contributions in this repository are also released 
 >80200018 80200018    20000     1 . += 128 * 1024
 >80220018 80220018        0     1 __stack_top = .
 >```
->
+
+
 也可以使用 llvm-nm 检查函数/变量的地址：
 ```
 $ llvm-nm kernel.elf

@@ -11,9 +11,13 @@ server 開發： select
 
 dynamic tracing 動態追蹤機制：分析運作中的系統，不需要把程序停下來，大部分os都做不到
 
-eBPF tracing tool: 動態分析的關鍵，一開始是做封包過濾。BPG 在 kernel 中執行一個 VM。
+eBPF tracing tool: extended BPF 動態分析的關鍵，一開始是做封包過濾。BPG 在 kernel 中執行一個 VM。
 
-* 00:19:00
+XDP: 抵禦 DDoS
+
+安裝 simrupt
+
+* 00:27:00
 
 
 

@@ -39,6 +39,10 @@ Ingo: CFS 掠 CK 之美，將 RSDL 重寫，取名 CFS，CK 回歸麻醉醫師�
 
 * 03:27:00
 
+CFS: IFS, WFQ, 無固定 time slice, 
+
+* 03:40:00
+
 
 
 

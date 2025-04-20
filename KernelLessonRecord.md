@@ -29,9 +29,21 @@ task_struct
 
 lsmod,  PID 0, 1, 2
 
-
-
 * 02:00:00
+
+Brendan blog: bpftrace v.c. BCC
+
+CK: RSDL
+
+Ingo: CFS 掠 CK 之美，將 RSDL 重寫，取名 CFS，CK 回歸麻醉醫師本業！讓自己有選擇性很重要！
+
+* 03:25:00
+
+
+
+
+
+
 
 
 

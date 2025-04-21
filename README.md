@@ -472,8 +472,15 @@ void kernel_main(void) {
 }
 ```
 
+同时，创建一个新的 kernel.h 文件并定义返回值结构：
+```
+#pragma once
 
-
+struct sbiret {
+    long error;
+    long value;
+};
+```
 
 
 

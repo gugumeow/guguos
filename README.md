@@ -432,7 +432,8 @@ $ llvm-nm kernel.elf
 
 * 向 SBI 說 hello
 
-SBI 是“作業系统的 API”。要調用 SBI 的功能，我们使用 ecall 指令：
+SBI 是「作業系统的 API」。要調用 SBI 的功能，我们使用 ecall 指令：
+
 ```
 #include "kernel.h"
 
@@ -473,7 +474,7 @@ void kernel_main(void) {
 }
 ```
 
-同时，创建一个新的 kernel.h 文件并定义返回值结构：
+同時創建一個新的 kernel.h 檔案並定義返回值結構：
 ```
 #pragma once
 

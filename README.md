@@ -483,7 +483,7 @@ struct sbiret {
 };
 ```
 
-以下是 printf 函数的实现：
+以下是 printf 函式的實作：
 
 ```
 #include "common.h"
@@ -552,9 +552,7 @@ end:
 }
 ```
 
-
-
-来自内核的"Hello World"：
+來自核心的"Hello World"：
 ```
 #include "kernel.h"
 #include "common.h"
@@ -568,6 +566,29 @@ void kernel_main(void) {
     }
 }
 ```
+
+將 common.c 加到編譯目標：
+```
+run.sh
+
+$CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf \
+    kernel.c common.c
+```
+
+運行它，將會看到以下所示 Hello World! 和 1 + 2 = 3, 1234abcd：
+
+```
+$ ./run.sh
+
+Hello World!
+1 + 2 = 3, 1234abcd
+```
+
+強大的盟友「printf 除錯」已經加入你的作業系統了！
+
+
+
+
 
 
 

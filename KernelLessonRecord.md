@@ -23,6 +23,8 @@ IPO:7823
 
 ## W09-2: 20250418 課程
 
+sehttp: about 1000 lines code
+
 cserv: by jserv, about 4K lines code
 
 創新唯一的理由是，原本做得不夠好

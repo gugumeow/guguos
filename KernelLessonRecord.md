@@ -29,6 +29,10 @@ cserv: by jserv, about 4K lines code
 
 創新唯一的理由是，原本做得不夠好
 
+切換成本：process > thread > coroutine
+
+
+
 
 
 ## W09-1: 20250417 futex, 伺服器開發與 Linux 核心對應的系統呼叫

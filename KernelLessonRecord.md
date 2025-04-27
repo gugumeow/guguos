@@ -25,7 +25,7 @@ IPO:7823
 
 cserv: by jserv, about 4K lines code
 
-
+創新唯一的理由是，原本做得不夠好
 
 
 

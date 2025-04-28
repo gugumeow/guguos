@@ -7,9 +7,13 @@ IPO:7823
 
 ## W10: 20250424 現代微處理器
 
+2017-10-03
 
+SI 系統整合商
 
+MALI
 
+Wall: Power, ILP, Memory
 
 
 

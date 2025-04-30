@@ -588,15 +588,21 @@ Hello World!
 強大的盟友「printf 除錯」已經加入你的作業系統了！
 
 
-
-
-
-
-
-
-
-
 06.C Standard Library
+
+本章從頭開始實現 C 標準函式庫的基本類型記憶體操作。
+
+
+
+
+
+
+
+
+
+
+
+
 
 07.Kernel Panic
 

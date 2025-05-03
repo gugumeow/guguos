@@ -75,6 +75,10 @@ SFD 1 Byte 10101011 (0xD5) 封包資料的起點指示
 	•	這塊記憶體是 DMA-able 的，通常是「ring buffer（環狀緩衝區）」的一部份
 	•	通常透過 netdev_alloc_skb() 配置，或在驅動初始時用 dma_alloc_coherent() 建立一整塊共享空間
 
+------
+
+網卡接收的數位訊號頻率與內部 shift register clock 通常不同，兩者之間會透過 CDR + FIFO 緩衝等技術完成資料同步與時脈域轉換，確保資料穩定地從線上接收並送入內部數位邏輯。
+
 
 
 

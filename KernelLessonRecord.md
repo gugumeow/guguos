@@ -17,7 +17,7 @@ Wall: Power, ILP, Memory
 
 CPU 不能只看時脈，要看整體表現 spec.org
 
-
+branch predictor machine learning
 
 
 

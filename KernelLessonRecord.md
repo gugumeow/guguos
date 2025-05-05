@@ -19,7 +19,7 @@ CPU 不能只看時脈，要看整體表現 spec.org
 
 branch predictor machine learning
 
-
+沒有強度的就是非本科，本科就應該開發有強度的東西！
 
 
 

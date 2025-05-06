@@ -23,6 +23,12 @@ branch predictor machine learning
 
 分支預測是很難的！ARM的compiler工程師約有2百人！晶芯科技全部人數約100人！（2017）
 
+**linux中斷處理**
+
+CPU Timer 與 clock 的差異和用途？
+
+
+
 
 
 

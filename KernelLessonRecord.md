@@ -27,6 +27,7 @@ branch predictor machine learning
 
 CPU Timer 與 clock 的差異和用途？
 
+top-half, bottom-half
 
 
 

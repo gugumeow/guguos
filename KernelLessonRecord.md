@@ -35,6 +35,15 @@ tasklets, softirq, rtos, clock interrupt
 
 eBPF:強大，alice也有介紹
 
+mpstat -A, cat /proc/interrupts, NMI(no-markable interrupt), ARM FIQ
+
+
+
+
+
+
+
+
 
 
 

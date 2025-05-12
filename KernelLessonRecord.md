@@ -39,7 +39,7 @@ mpstat -A, cat /proc/interrupts, NMI(no-markable interrupt), ARM FIQ
 
 ADB with USB
 
-
+Tickless Kernel
 
 
 

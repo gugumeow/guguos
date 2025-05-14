@@ -43,7 +43,7 @@ Tickless Kernel
 
 預測未來最好的方法就是創造未來
 
-
+VM: Bochs, QEMU
 
 
 

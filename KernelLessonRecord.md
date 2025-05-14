@@ -45,7 +45,7 @@ Tickless Kernel
 
 VM: Bochs, QEMU
 
-
+Linux Kernel 已發展到3000萬行的規模，切勿用格物致知的方式來看原始碼，需系統化了解功能再去讀程式碼！
 
 
 

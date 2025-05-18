@@ -10,6 +10,100 @@
 
 IPO:7823
 
+## Bochs
+
+Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。以下是一些 常用的 Bochs 指令與操作，分為幾個常見場景介紹：
+
+⸻
+
+🔧 啟動與基本操作
+
+啟動 Bochs
+
+bochs -f bochsrc.txt
+
+	•	-f 指定使用的設定檔（例如 bochsrc.txt）
+
+⸻
+
+🧩 設定檔（bochsrc.txt）常見參數
+
+# 指定記憶體大小
+megs: 32
+
+# 指定虛擬磁碟（floppy 或硬碟映像）
+floppya: 1_44=floppy.img, status=inserted
+ata0-master: type=disk, path="hdd.img", mode=flat, cylinders=20, heads=16, spt=63
+
+# 啟動裝置順序
+boot: floppy
+
+# 記錄檔
+log: bochslog.txt
+
+# 啟用除錯模式
+display_library: nogui
+magic_break: enabled
+
+
+⸻
+
+🐞 除錯與執行常用指令（Bochs 除錯器內）
+
+當進入 Bochs 的除錯模式（通常 nogui 模式下）會出現 prompt Bochs>，可以輸入以下指令：
+
+📌 控制執行
+
+c                  # 繼續執行 (continue)
+s                  # 單步執行（step into）
+u                  # 一直執行直到離開目前函式（step until return）
+reset              # 重設模擬器
+
+📌 查看暫存器與記憶體
+
+info registers     # 顯示所有暫存器
+print eip          # 顯示 EIP 的值
+print eax          # 顯示 EAX 的值
+x /10bx 0x7c00     # 查看 0x7c00 開始的 10 個 byte（十六進位顯示）
+
+📌 設定與清除中斷點
+
+b 0x7c00           # 在 0x7c00 設中斷點
+d 0x7c00           # 清除 0x7c00 的中斷點
+info breakpoints   # 查看目前所有中斷點
+
+📌 匯入/儲存記憶體
+
+save-memory memdump.bin 0x7c00 512   # 將 0x7c00 開始的 512 byte 儲存到檔案
+load-memory memdump.bin 0x7c00       # 將檔案載入記憶體
+
+
+⸻
+
+🔍 顯示記憶體內容範例指令
+
+x /16wx 0x7c00     # 顯示從 0x7c00 開始的 16 個 word（每 word 為 2 bytes）
+x /8db 0x7c00      # 顯示 8 個 byte，以十進位格式
+
+
+⸻
+
+📘 小技巧
+	•	magic_break：可在程式中用 xchg bx, bx 來觸發暫停（Bochs magic break）
+	•	在 Bochs prompt 中輸入 help 可列出所有指令
+
+⸻
+
+如果你有正在使用的 bochsrc.txt 或模擬環境，我也可以幫你客製化指令和配置！是否需要針對 boot sector、作業系統 kernel 或硬體模擬部分進一步說明？
+
+
+
+
+
+
+
+
+
 ## W10: 20250424 現代微處理器
 
 2017-10-03
@@ -51,12 +145,6 @@ Tickless Kernel
 VM: Bochs, QEMU
 
 Linux Kernel 已發展到3000萬行的規模，切勿用格物致知的方式來看原始碼，需系統化了解功能再去讀程式碼！
-
-
-
-
-
-
 
 
 

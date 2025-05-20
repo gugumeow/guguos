@@ -21,52 +21,112 @@ Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常
 ├── build.sh
 └── bochsrc.txt
 
-# NASM 撰寫 boot.asm
+# 最簡單的 Bochs 範例：只能顯示 Hello World!
 
-[BITS 16]        ; 16位元模式
-[ORG 0x7C00]     ; BIOS 將 boot sector 載入的位址
+# 安裝 bochs, nasm（組譯器）
+
+```bash
+sudo apt install bochs bochs-x nasm
+
+```
+
+# 編寫組合語言程式：hello.asm
+
+```asm
+[BITS 16]
+[ORG 0x7C00]
 
 start:
-    mov si, msg          ; 將字串位址放入 SI
-    call print_string
+    ; 清除螢幕（可略）
+    mov ah, 0x0E
+
+    mov si, msg
+.next_char:
+    lodsb           ; 讀一個字元到 AL
+    cmp al, 0
+    je hang         ; 如果是 NULL 結束
+
+    int 0x10        ; BIOS 輸出字元到螢幕
+    jmp .next_char
 
 hang:
-    jmp hang             ; 無限迴圈
+    cli
+    hlt
+    jmp $
 
-print_string:
-    mov ah, 0x0E         ; BIOS TTY 模式
-.next_char:
-    lodsb                ; 將 [SI] 放入 AL, 並遞增 SI
-    cmp al, 0
-    je .done
-    int 0x10             ; 呼叫 BIOS 中斷印出字符
-    jmp .next_char
-.done:
-    ret
+msg db 'Hello World!', 0
 
-msg db "Hello, Bochs!", 0
+times 510-($-$$) db 0  ; 填滿到 510 bytes
+dw 0xAA55              ; 引導扇區魔術字
+```
 
-times 510 - ($ - $$) db 0  ; 補滿到 510 bytes
-dw 0xAA55                  ; MBR 標誌
+# 組譯產生開機映像檔：boot.img
 
-# 設定檔
+```bash
+nasm -f bin hello.asm -o boot.img
 
-megs: 16
-romimage: file=/usr/share/bochs/BIOS-bochs-latest
-vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+```
+
+# 建立 Bochs 設定檔：bochsrc.txt
+
+```txt
+megs: 32
+# romimage: file=/usr/share/bochs/BIOS-bochs-latest
+romimage: file=./BIOS-bochs-latest
+# vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+vgaromimage: file=./VGABIOS-lgpl-latest
 floppya: 1_44=boot.img, status=inserted
-boot: floppy
+boot: a
 log: bochslog.txt
-display_library: nogui
-panic: action=ask
-error: action=report
-info: action=report
+display_library: x
+```
 
-# build.sh 組譯及執行的腳本
+注意 romimage 及 vgaromimage 分別要有 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後在 /BIOS/ 資料夾中。
 
-#!/bin/bash
-nasm -f bin boot.asm -o boot.img
+# 啟動 Bochs：
+
+```bash
 bochs -f bochsrc.txt
+```
+
+# Bochs 常用指令：
+
+```
+| 指令         | 說明                            |
+| ---------- | ----------------------------- |
+| `c`        | 繼續執行（Continue）                |
+| `s`        | 單步執行一條指令（Step into）           |
+| `v`        | 單步執行並跳過呼叫（Step over）          |
+| `b [addr]` | 設定斷點，例如 `b 0x7c00`            |
+| `bl`       | 列出所有斷點（breakpoint list）       |
+| `bd [n]`   | 禁用第 n 個斷點（breakpoint disable） |
+| `be [n]`   | 啟用第 n 個斷點（breakpoint enable）  |
+| `d [addr]` | 顯示記憶體內容，例如 `d 0x7c00`         |
+| `u [addr]` | 反組譯程式碼，例如 `u 0x7c00`          |
+| `r`        | 顯示所有暫存器內容                     |
+| `regs`     | 同上，顯示寄存器狀態                    |
+| `w`        | 顯示 flags 狀態                   |
+| `q`        | 離開 Bochs                      |
+| `help`     | 顯示所有可用的除錯指令                   |
+
+```
+
+注意要中斷執行中的指令使用 Ctrl+C，中斷後會出現 <bochs:x> q  ← 再輸入 q 正常退出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## W10: 20250424 現代微處理器

@@ -73,9 +73,7 @@ nasm -f bin hello.asm -o boot.img
 
 ```txt
 megs: 32
-# romimage: file=/usr/share/bochs/BIOS-bochs-latest
 romimage: file=./BIOS-bochs-latest
-# vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
 vgaromimage: file=./VGABIOS-lgpl-latest
 floppya: 1_44=boot.img, status=inserted
 boot: a
@@ -83,13 +81,15 @@ log: bochslog.txt
 display_library: x
 ```
 
-注意 romimage 及 vgaromimage 分別要有 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後放在 /BIOS/ 資料夾中。
+注意：參數 romimage 及 vgaromimage 分別要設定 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後是位於 /BIOS/ 資料夾中。
 
 ## 啟動 Bochs：
 
 ```bash
 bochs -f bochsrc.txt
 ```
+
+注意：執行後會另開 Bochs 視窗，整個是黑畫面。在原 bash 中點選指令 c，會繼續執行，就會在 Bochs 視窗中顯示「Hello World!」。常用 Bochs 指令如下！
 
 ## Bochs 常用指令：
 

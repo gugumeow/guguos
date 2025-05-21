@@ -2,7 +2,7 @@
 
 Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。
 
-## 最簡單的 Bochs 範例：只能顯示 "Hello World!" 
+## 最簡單的 Bochs 範例：只能顯示「Hello World!」
 
 ### Bochs 基本檔案結構
 
@@ -76,7 +76,7 @@ display_library: x
 bochs -f bochsrc.txt
 ```
 
-注意：執行後會另開 Bochs 視窗，整個是黑畫面。在原 bash 中點選指令 c，會繼續執行，就會在 Bochs 視窗中顯示「Hello World!」。常用 Bochs 指令如下！
+注意：執行後會另開 Bochs 視窗，整個是黑畫面。在原 bash 中輸入指令 c，會繼續執行，就會在 Bochs 視窗中顯示「Hello World!」。常用 Bochs 指令如下！
 
 ## Bochs 常用指令：
 
@@ -98,4 +98,4 @@ bochs -f bochsrc.txt
 | `help`     | 顯示所有可用的除錯指令                   |
 
 
-注意要中斷執行中的指令使用 Ctrl+C，中斷後會出現 <bochs:x> q  ← 再輸入 q 正常退出
+注意：要中斷執行中的指令使用 Ctrl+C，中斷後會出現 '<bochs:x>'，再輸入 q 即可正常退出

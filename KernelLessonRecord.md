@@ -14,23 +14,23 @@ IPO:7823
 
 Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。以下是一些 常用的 Bochs 指令與操作，分為幾個常見場景介紹：
 
-# 檔案結構
+### 檔案結構
 
 /your_project
 ├── boot.asm
 ├── build.sh
 └── bochsrc.txt
 
-# 最簡單的 Bochs 範例：只能顯示 Hello World!
+### 最簡單的 Bochs 範例：只能顯示 Hello World!
 
-# 安裝 bochs, nasm（組譯器）
+### 安裝 bochs, nasm（組譯器）
 
 ```bash
 sudo apt install bochs bochs-x nasm
 
 ```
 
-# 編寫組合語言程式：hello.asm
+### 編寫組合語言程式：hello.asm
 
 ```asm
 [BITS 16]
@@ -60,14 +60,14 @@ times 510-($-$$) db 0  ; 填滿到 510 bytes
 dw 0xAA55              ; 引導扇區魔術字
 ```
 
-# 組譯產生開機映像檔：boot.img
+### 組譯產生開機映像檔：boot.img
 
 ```bash
 nasm -f bin hello.asm -o boot.img
 
 ```
 
-# 建立 Bochs 設定檔：bochsrc.txt
+### 建立 Bochs 設定檔：bochsrc.txt
 
 ```txt
 megs: 32
@@ -81,15 +81,15 @@ log: bochslog.txt
 display_library: x
 ```
 
-注意 romimage 及 vgaromimage 分別要有 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後在 /BIOS/ 資料夾中。
+注意 romimage 及 vgaromimage 分別要有 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後放在 /BIOS/ 資料夾中。
 
-# 啟動 Bochs：
+## 啟動 Bochs：
 
 ```bash
 bochs -f bochsrc.txt
 ```
 
-# Bochs 常用指令：
+## Bochs 常用指令：
 
 ```
 | 指令         | 說明                            |

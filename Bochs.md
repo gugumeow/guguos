@@ -1,8 +1,10 @@
-## Bochs
+## Bochs 簡介
 
-Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。以下是一些 常用的 Bochs 指令與操作，分為幾個常見場景介紹：
+Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。
 
-### 檔案結構
+## 最簡單的 Bochs 範例：只能顯示 "Hello World!" 
+
+### Bochs 基本檔案結構
 
 ```
 /your_project
@@ -10,8 +12,6 @@ Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常
 ├── build.sh
 └── bochsrc.txt
 ```
-
-### 最簡單的 Bochs 範例：只能顯示 Hello World!
 
 ### 安裝 bochs, nasm（組譯器）
 
@@ -54,7 +54,6 @@ dw 0xAA55              ; 引導扇區魔術字
 
 ```bash
 nasm -f bin hello.asm -o boot.img
-
 ```
 
 ### 建立 Bochs 設定檔：bochsrc.txt
@@ -69,7 +68,7 @@ log: bochslog.txt
 display_library: x
 ```
 
-注意：參數 romimage 及 vgaromimage 分別要設定 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案，此二檔案可從 github 下載，解壓縮後是位於 /BIOS/ 資料夾中。
+注意：參數 romimage 及 vgaromimage 分別要設定 BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案的目錄，此二個檔案可從 github 下載，解壓縮後會位於 /BIOS/ 資料夾中。
 
 ## 啟動 Bochs：
 

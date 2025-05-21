@@ -56,7 +56,7 @@ dw 0xAA55              ; 引導扇區魔術字
 nasm -f bin hello.asm -o boot.img
 ```
 
-### 建立 Bochs 設定檔：bochsrc.txt
+### 建立 Bochs 組態檔：bochsrc.txt
 
 ```txt
 megs: 32

@@ -16,10 +16,12 @@ Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常
 
 ### 檔案結構
 
+```
 /your_project
 ├── boot.asm
 ├── build.sh
 └── bochsrc.txt
+```
 
 ### 最簡單的 Bochs 範例：只能顯示 Hello World!
 

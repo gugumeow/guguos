@@ -48,7 +48,9 @@ start:
 ; 一個迴圈開始點（label），方便之後用 jmp 回到這裡。
 .next_char:
     ; LOaD String Byte：從 SI 所指的位置讀一個 byte（也就是一個字元）到 AL 暫存器，然後 SI 自動加一。
-    lodsb
+    ; lodsb
+    mov al, [si]
+    inc si
 
     ; 比較剛剛讀到的字元是否為 0（代表字串結束，因為我們用 NULL 結尾）。
     cmp al, 0

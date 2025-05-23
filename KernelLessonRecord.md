@@ -12,9 +12,9 @@ IPO:7823
 
 ## W14: 20250522
 
-HSA - Heteogeneous System Architecture 
+HSA - Heteogeneous System Architecture: java TornadoVM
 
-
+VLIW - GPU 使用什麼指令集？
 
 
 

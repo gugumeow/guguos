@@ -2,6 +2,16 @@
 
 Bochs 是一個開源的 IA-32 (x86) 模擬器，用來模擬 PC 系統，非常適合用於作業系統教學與開發。
 
+## Minimal Bochs 範例：BIOS-bochs-latest 及 VGABIOS-lgpl-latest 檔案最簡範例
+
+
+
+
+
+
+
+
+
 ## 最簡單的 Bochs 範例：只能顯示「Hello World!」
 
 ### Bochs 基本檔案結構

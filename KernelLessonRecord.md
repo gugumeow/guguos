@@ -16,7 +16,7 @@ HSA - Heteogeneous System Architecture: java TornadoVM
 
 VLIW - GPU 使用什麼指令集？
 
-
+fork bomb
 
 
 

@@ -20,7 +20,7 @@ fork bomb
 
 Linux containers in 500 lines of code
 
-Container: AWS Lambda
+Container: AWS Lambda, tini(meta eng. 600 Lines)
 
 
 

@@ -10,6 +10,23 @@
 
 IPO:7823
 
+## W15: 20250529
+
+Memory Model:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## W14: 20250522
 
 HSA - Heteogeneous System Architecture: java TornadoVM
@@ -23,10 +40,6 @@ Linux containers in 500 lines of code
 Container: AWS Lambda, tini(meta eng. 600 Lines)
 
 TLS: CPU L3 各個 core 共享，要注意私鑰不可存這邊
-
-
-
-
 
 ## W10: 20250424 現代微處理器
 

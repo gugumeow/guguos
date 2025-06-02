@@ -20,6 +20,12 @@ meta:folly 智慧的結晶
 
 ARM Cortex-M: 超低功耗、no-mmu
 
+STM32F429: 只要插USB即可供電
+
+
+
+
+
 
 
 

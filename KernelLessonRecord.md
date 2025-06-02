@@ -18,7 +18,7 @@ RCU: lock free, 確保大量同步測試可行，讀多寫少
 
 meta:folly 智慧的結晶
 
-
+ARM Cortex-M: 超低功耗、no-mmu
 
 
 

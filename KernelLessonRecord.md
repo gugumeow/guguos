@@ -18,11 +18,11 @@ RCU: lock free, 確保大量同步測試可行，讀多寫少
 
 meta:folly 智慧的結晶
 
-ARM Cortex-M: 超低功耗、no-mmu
+ARM Cortex-M: 超低功耗、no-mmu(fork -> vfork, child process block parent, clone(2) must read)
 
 STM32F429: 只要插USB即可供電
 
-
+Manual page: system call (2) -
 
 
 

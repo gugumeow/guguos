@@ -24,6 +24,8 @@ STM32F429: 只要插USB即可供電
 
 Manual page: system call (2) -
 
+MTK Flash Tool，或稱 MediaTek SP Flash Tool，是一款針對 MediaTek Android 設備的多功能工具。此工具對於閃存官方固件、恢復、客製 ROM，甚至修復如開機循環和變磚等軟體問題至關重要。它支持多種 MediaTek 芯片組，成為 Android 愛好者和技術人員的首選解決方案。
+
 
 
 

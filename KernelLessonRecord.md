@@ -28,7 +28,7 @@ MTK Flash Tool，或稱 MediaTek SP Flash Tool，是一款針對 MediaTek Androi
 
 x86S, WoA(Windows on ARM)
 
-
+A20 line
 
 
 

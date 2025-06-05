@@ -10,6 +10,24 @@
 
 IPO:7823
 
+## W16: 20250605
+
+彈簧刀無人機、大量使用open source軟體
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## W15: 20250529
 
 Memory Model:
@@ -29,10 +47,6 @@ MTK Flash Tool，或稱 MediaTek SP Flash Tool，是一款針對 MediaTek Androi
 x86S, WoA(Windows on ARM)
 
 A20 line
-
-
-
-
 
 
 ## W14: 20250522

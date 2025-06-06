@@ -16,7 +16,7 @@ IPO:7823
 
 open source company: igalia, SUSE
 
-
+scx: 針對延遲敏感的程序排程
 
 
 

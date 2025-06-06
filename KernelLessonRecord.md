@@ -14,7 +14,7 @@ IPO:7823
 
 彈簧刀無人機、大量使用open source軟體
 
-igalia: open source company
+open source company: igalia, SUSE
 
 
 

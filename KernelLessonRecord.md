@@ -18,7 +18,7 @@ open source company: igalia, SUSE
 
 scx: 針對延遲敏感的程序排程
 
-
+isolcpu:隔離cpu給某個latency sensitive process使用
 
 
 

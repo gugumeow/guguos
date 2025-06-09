@@ -20,7 +20,7 @@ scx: 針對延遲敏感的程序排程
 
 isolcpu:隔離cpu給某個latency sensitive process使用
 
-高頻交易：管制品
+高頻交易：APGA來加速，latency需非常低、us等級
 
 
 

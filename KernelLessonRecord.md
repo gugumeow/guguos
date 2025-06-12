@@ -10,6 +10,26 @@
 
 IPO:7823
 
+## W17: 20250612
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## W16: 20250605
 
 彈簧刀無人機、大量使用open source軟體
@@ -23,18 +43,6 @@ isolcpu:隔離cpu給某個latency sensitive process使用
 高頻交易：FPGA來加速，latency需非常低、us等級
 
 x86 I/O ports: 可在沒有mmu的情況下直接控制I/O裝置，如軟碟機
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## W15: 20250529

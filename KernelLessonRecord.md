@@ -12,7 +12,8 @@ IPO:7823
 
 ## W17: 20250612
 
-2038 end of time problem
+20380119 031407 end of time problem
+20380119 111407 +8
 
 
 

@@ -10,24 +10,13 @@
 
 IPO:7823
 
+https://youtu.be/2raQQ_LYfM4?si=VpJ3Ah_PRGQJ8KME
+
+
 ## W17: 20250612
 
 20380119 031407 end of time problem
 20380119 111407 +8
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

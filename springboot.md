@@ -1,7 +1,9 @@
-### Conecting DB
+### Connecting DB
 
 #### pom.xml
 
+<dependency>
+
 spring-boot-start-jdbc
 
-mysql-conect-java
+mysql-connect-java

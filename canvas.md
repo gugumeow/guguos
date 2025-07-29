@@ -1,3 +1,13 @@
+### 鈴木一朗 Ichiro Suzuki
+
+- 達成夢想與目標的方法只有一個，就是累積微不足道的小事。
+
+- 雖然每天都必須不斷重複毫無趣味的相同工作，但唯有持續累積努力下去，才有可能成為一流的專家。
+
+- 要比較的人，永遠是自己。
+
+
+
 ### 設定canvas寬高
 
 - 通過canvas標籤或canvas.width及canvas.height來設定，"不要"用CSS或canvas.style.width或canvas.style.height來設定。

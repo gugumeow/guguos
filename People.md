@@ -17,3 +17,8 @@
 - 一個人的價值，在於他貢獻了什麼，而不在於他能得到什麼。（The value of a man resides in what he gives and not in what he is capable of receiving.）
 
 - 人只有獻身於社會，才能找出那實際上是短暫而有風險的生命的意義。
+
+### 湯質看本質（YouTuber）
+
+- 給未來孩子的信：不要圍觀他人的生活
+https://youtu.be/qa-5tMdU98c?si=xTsPO2vH6KsOPzXe

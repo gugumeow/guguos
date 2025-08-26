@@ -23,7 +23,10 @@
 - 給未來孩子的信：不要圍觀他人的生活
 https://youtu.be/qa-5tMdU98c?si=xTsPO2vH6KsOPzXe
 
-
 ### Linus Torvolds
 
 - Linux Kernel
+
+### 李鴻源
+
+- You must find out your own value.
